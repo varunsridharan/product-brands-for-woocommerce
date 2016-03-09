@@ -3,7 +3,7 @@
  * Plugin Name:       Product Brands For WooCommerce
  * Plugin URI:        https://wordpress.org/plugins/product-brands-for-woocommerce/
  * Description:       Create, assign and list brands for products, and allow customers to filter by brand.
- * Version:           0.1
+ * Version:           0.2
  * Author:            Varun Sridharan
  * Author URI:        http://varunsridharan.in
  * Text Domain:       product-brands-for-woocommerce
@@ -18,7 +18,7 @@ class Product_Brands_For_WooCommerce {
 	/**
 	 * @var string
 	 */
-	public $version = '0.1';
+	public $version = '0.2';
 
 	/**
 	 * @var WooCommerce The single instance of the class
@@ -122,7 +122,7 @@ class Product_Brands_For_WooCommerce {
         $this->define('PBF_WC_PATH',plugin_dir_path( __FILE__ )); # Plugin DIR
         $this->define('PBF_WC_LANGUAGE_PATH',PBF_WC_PATH.'languages');
         $this->define('PBF_WC_TXT','product-brands-for-woocommerce'); #plugin lang Domain
-        $this->define('PBF_WC_URL',plugins_url('', __FILE__ )); 
+        $this->define('PBF_WC_URL',plugins_url('', __FILE__ ).'/'); 
         $this->define('PBF_WC_FILE',plugin_basename( __FILE__ ));
         $this->define('PBF_WC_V',$this->version);
     }

@@ -75,6 +75,9 @@ class Product_Brands_For_WooCommerce_Settings extends WC_Settings_Page {
 					'class'    => 'wc-enhanced-select',
 					'options' => array(
 						'single_title' => __('Product Title',PBF_WC_TXT), 
+						'single_price' => __("Product Price",PBF_WC_TXT),
+						'single_excerpt' => __("Product excerpt",PBF_WC_TXT),
+						'single_addtocart' => __("Product Add To Cart",PBF_WC_TXT),
 						'custom' => __('Manual',PBF_WC_TXT),
 					), 
 					'autoload' => false
@@ -113,24 +116,24 @@ class Product_Brands_For_WooCommerce_Settings extends WC_Settings_Page {
 				
 				array(
 					'title'    => __( 'HTML Template', PBF_WC_TXT ),
-					'desc'     =>  __( 'HTML Template For Brand Image', PBF_WC_TXT ),
+					'desc'     =>  __( 'HTML Template For Brand Image . <br/> Use <code> {brand_images} </code> to get image tag.. <br/> do not add img html tag.. which will be auto generated.', PBF_WC_TXT ),
 					'id'       => PBF_WC_DB.'html_template', 
-					'default'  => '<div class="{default_class} " > <img src="{brand_img_url}" /> </div> ',
+					'default'  => '<div class="{default_class} " >{brand_images}</div> ',
 					'css' => 'width:75%;',
 					'type'     => 'textarea',  
 					'autoload' => false,
-					'desc_tip' =>  true,
+					'desc_tip' =>  false,
 				), 
 				
 				array(
 					'title'    => __( 'Custom Style', PBF_WC_TXT ),
-					'desc'     =>  __( 'Custom Styling For Product Brand Images', PBF_WC_TXT ),
+					'desc'     =>  __( 'Custom Styling For Product Brand Images <br/> please do not add <code><style></code> OR <code></style></code> tags. which will be auto generated', PBF_WC_TXT ),
 					'id'       => PBF_WC_DB.'custom_style', 
 					'default'  => '',
 					'css' => 'width:75%;',
 					'type'     => 'textarea',  
 					'autoload' => false,
-					'desc_tip' =>  true,
+					'desc_tip' =>  false,
 				), 
 				
 				array( 

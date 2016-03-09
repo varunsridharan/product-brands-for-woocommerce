@@ -8,7 +8,7 @@ Requires at least: 3.0
 Tested up to: 4.3
 WC requires at least: 1.0
 WC tested up to: 2.4.6
-Stable tag: 0.1
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
@@ -37,8 +37,12 @@ The brands extension for WooCommerce allows you to create brands for your shop; 
 **Brands Menu**
 ` WooCommerce Products => Brands `
 
+= Available Shortcode =
+* `[pbf_wc]` For Listing Brand Image For Single Product
+* `[pbf_wc_list]` For Listing All Brands In One Page Like A-Z Filter
+* `[pbf_wc_grid]` For Listing All Brands In One Page With Thier Brand Image
 
-= Shortcode Options =
+= [pbf_wc] Shortcode Options =
 Use this shortcode to get product brand image any where `[pbf_wc]` 
 
 **Product ID :** use `[pbf_wc]` to get automaticly product id or use  `[pbf_wc id='23']`
@@ -48,11 +52,24 @@ Use this shortcode to get product brand image any where `[pbf_wc]`
 **Remove Custom Style :** To Disable Custom Style Use  `[pbf_wc style='false']`
 
 
+= [pbf_wc_list] Shortcode Options =
+* **hide_empty : ** Allows To Hide A Brand If No Products Linked `[pbf_wc_list hide_empty='true']`
+* **orderby : **  Allows To Order Brands By **asc** OR **desc** `[pbf_wc_list orderby='asc']`
+* **exclude : **   Allows To Exclude Some Brands. just by entering the brand ids `[pbf_wc_list exclude='1,2,3']`
+
+= [pbf_wc_grid] Shortcode Options =
+* **hide_empty : ** Allows To Hide A Brand If No Products Linked `[pbf_wc_list hide_empty='true']`
+* **orderby : **  Allows To Order Brands By **asc** OR **desc** `[pbf_wc_list orderby='asc']`
+* **exclude : **  Allows To Exclude Some Brands. just by entering the brand ids `[pbf_wc_list exclude='1,2,3']`
+* **columns : **  Allows To Set Custom Coloum For Display `[pbf_wc_grid columns='3']`
+
+
 
 == Screenshots ==
 1. Settings Page
 2. Adding Product Brands
 3. Setting Product Brands For Product
+
 == Installation ==
 
 = Minimum Requirements =
@@ -83,5 +100,11 @@ The manual installation method involves downloading our plugin and uploading it 
  
 
 == Changelog == 
+= 0.2 =
+* Added 2 New Shortcode `pbf_wc_list` AND `pbf_wc_grid`
+* Added 2 New Templates
+* Fixed Bugs
+* Updated To Latest WP & WC
+
 = 0.1 =
 * Base Version

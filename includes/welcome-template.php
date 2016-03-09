@@ -1,7 +1,7 @@
 <div class="wrap about-wrap">
-    <h1>Welcome To <?php _e(PBF_WC_NAME.' v '.PBF_WC_V,WC_URBC_TXT); ?></h1>
+    <h1>Welcome To <?php _e(PBF_WC_NAME.' v '.PBF_WC_V,PBF_WC_TXT); ?></h1>
     <div class="about-text plugin_welcome_text">
-        Thanks for installing! <?php _e(PBF_WC_NAME.' v '.PBF_WC_V,WC_URBC_TXT); ?> is more powerful, stable and secure than ever before. We hope you enjoy using it. </div>
+        Thanks for installing! <?php _e(PBF_WC_NAME.' v '.PBF_WC_V,PBF_WC_TXT); ?> is more powerful, stable and secure than ever before. We hope you enjoy using it. </div>
 
 
  
@@ -54,33 +54,33 @@ Use this shortcode to get product brand image any where <code>[pbf_wc]</code><br
             <div class="handlediv" title="Click to toggle">
                 <br />
             </div>
-            <h3 class="hndle"><span><?php _e('Subscribe to our mailing list',WC_URBC_TXT); ?></span></h3> 
+            <h3 class="hndle"><span><?php _e('Subscribe to our mailing list',PBF_WC_TXT); ?></span></h3> 
             <div class="option">
                 <div id="mc_embed_signup">
                     <form action="http://varunsridharan.us11.list-manage.com/subscribe/post?u=438373310b9f3b6302526f737&amp;id=71f582aed1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                         <div id="mc_embed_signup_scroll"> 
                              
                             <div class="mc-field-group">
-                                <label for="mce-EMAIL"><?php _e('Email Address',WC_URBC_TXT); ?>  <span class="asterisk">*</span>
+                                <label for="mce-EMAIL"><?php _e('Email Address',PBF_WC_TXT); ?>  <span class="asterisk">*</span>
                                 </label>
                                 <input type="email" value="<?php echo get_option('admin_email'); ?>" name="EMAIL" class="required email" id="mce-EMAIL">
                             </div>
                             <div class="mc-field-group">
-                                <label for="mce-FNAME"><?php _e('First Name',WC_URBC_TXT); ?> <span class="asterisk">*</span>
+                                <label for="mce-FNAME"><?php _e('First Name',PBF_WC_TXT); ?> <span class="asterisk">*</span>
                                 </label>
                                 <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
                             </div>
                             <div class="mc-field-group">
-                                <label for="mce-LNAME"><?php _e('Last Name',WC_URBC_TXT); ?> </label>
+                                <label for="mce-LNAME"><?php _e('Last Name',PBF_WC_TXT); ?> </label>
                                 <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                             </div>
                             <div class="mc-field-group">
-                                <label for="mce-WEBSITE"><?php _e('Website',WC_URBC_TXT); ?> <span class="asterisk">*</span>
+                                <label for="mce-WEBSITE"><?php _e('Website',PBF_WC_TXT); ?> <span class="asterisk">*</span>
                                 </label>
                                 <input type="url" value="<?php echo get_site_url(); ?>" name="WEBSITE" class="required url" id="mce-WEBSITE">
                             </div>
                             <div class="mc-field-group">
-                                <label for="mce-COUNTRY"><?php _e('Country',WC_URBC_TXT); ?> <span class="asterisk">*</span>
+                                <label for="mce-COUNTRY"><?php _e('Country',PBF_WC_TXT); ?> <span class="asterisk">*</span>
                                 </label>
                                 <input type="text" value="" name="COUNTRY" class="required" id="mce-COUNTRY">
                                 <input type="hidden" value="Product Brands For WooCommerce" name="PLUGINNAME" class="" id="mce-PLUGINNAME">

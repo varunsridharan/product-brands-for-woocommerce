@@ -5,16 +5,17 @@ if ( ! defined( 'WPINC' ) ) { die; }
 class Product_Brands_For_WooCommerce_Function {
 
 	public function __construct(){
+		add_action( 'wp_enqueue_scripts', array( $this, 'styles' ) );
 		add_filter('woocommerce_get_image_size_pbf_wc_imgsize_small',array($this,'wc_get_imgsize_small'));
 		add_filter('woocommerce_get_image_size_pbf_wc_imgsize_medium',array($this,'wc_get_imgsize_medium'));
 		add_filter('woocommerce_get_image_size_pbf_wc_imgsize_large',array($this,'wc_get_imgsize_large'));
 		add_action( 'after_setup_theme', array( $this, 'set_image_size' ) );
 		add_action( 'init', array($this,'product_brands'), 0 );
-		
-		
 	}
 	
-	
+	public function styles() {
+	    wp_enqueue_style( 'product-brands-styles', PBF_WC_URL.'css/style.css');
+    }
 	/**
 	 * Returns Product Brands Small Image Size
 	 */
@@ -82,6 +83,9 @@ class Product_Brands_For_WooCommerce_Function {
 			'search_items'               => __( 'Search Brands', PBF_WC_TXT ),
 			'not_found'                  => __( 'Not Found', PBF_WC_TXT ),
 		);
+		
+		$labels = apply_filters('pbf_wc_tax_labels',$labels);
+		
 		$args = array(
 			'labels'                     => $labels,
 			'hierarchical'               => true,
@@ -91,10 +95,9 @@ class Product_Brands_For_WooCommerce_Function {
 			'show_in_nav_menus'          => true,
 			'show_tagcloud'              => true,
 		);
+		
 		register_taxonomy( 'product_brands', array( 'product' ), $args );
-
 	}	
-	
 	
 }
 ?>
