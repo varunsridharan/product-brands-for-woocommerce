@@ -1,0 +1,317 @@
+# Copyright (C) 2016 Product Brands For WooCommerce
+# This file is distributed under the same license as the Product Brands For WooCommerce package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Product Brands For WooCommerce 0.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/product-brands-for-woocommerce\n"
+"POT-Creation-Date: 2016-03-09 14:08:08+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/class-admin-functions.php:23
+msgid "Product Brand Image"
+msgstr ""
+
+#: admin/class-admin-functions.php:38
+msgid "Set Product Brand Image"
+msgstr ""
+
+#: admin/class-admin-functions.php:39
+msgid "Select Product Brand Image"
+msgstr ""
+
+#: admin/class-admin-functions.php:46 admin/class-admin-functions.php:47
+msgid "Remove Product Brand Image"
+msgstr ""
+
+#: admin/class-admin-functions.php:69
+msgid "Image"
+msgstr ""
+
+#: admin/class-admin-functions.php:99 admin/class-admin-functions.php:181
+msgid "Thumbnail"
+msgstr ""
+
+#: admin/class-admin-functions.php:112
+msgid "Brand Logo"
+msgstr ""
+
+#: admin/class-admin-functions.php:116 admin/class-admin-functions.php:186
+msgid "Upload/Add image"
+msgstr ""
+
+#: admin/class-admin-functions.php:117 admin/class-admin-functions.php:187
+msgid "Remove image"
+msgstr ""
+
+#: admin/class-admin-functions.php:134 admin/class-admin-functions.php:199
+msgid "Choose an image"
+msgstr ""
+
+#: admin/class-admin-functions.php:136 admin/class-admin-functions.php:201
+msgid "Use image"
+msgstr ""
+
+#: admin/class-admin-init.php:102
+msgid "Settings"
+msgstr ""
+
+#: admin/class-admin-init.php:103
+msgid "F.A.Q"
+msgstr ""
+
+#: admin/class-admin-init.php:104
+msgid "View On Github"
+msgstr ""
+
+#: admin/class-admin-init.php:105
+msgid "Report Issue"
+msgstr ""
+
+#: admin/class-admin-init.php:106
+msgid "Donate"
+msgstr ""
+
+#: admin/class-admin-init.php:107
+msgid "Contact Author"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:34
+msgid "Product Brands"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:48
+msgid "Product Brands Shortcode"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:50
+msgid ""
+"Use this shortcode to get product brand image any where <code>[pbf_wc]</code> <br/>\n"
+"\t\t\t\t\t\t<strong> Shortcode Vars : </strong> <br/>\n"
+"\t\t\t\t\t\t<strong> Product ID : </strong> use <code>[pbf_wc]</code> to get automaticly product id or use  <code>[pbf_wc id='23']</code>\n"
+"\t\t\t\t\t\t<strong> Image Size : </strong> small, medium, large <code> [pbf_wc size='small']</code> <br/>\n"
+"\t\t\t\t\t\t<strong> Custom Style :  </strong> To Disable Custom Style Use  <code> [pbf_wc style='false']</code> <br/>\n"
+"\t\t\t\t\t\n"
+"\t\t\t\t\t"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:64
+msgid "Product Brands Settings"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:70
+msgid "Where To Show"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:71
+msgid "If you select manual then you can use shortcode"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:77
+msgid "Product Title"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:78
+msgid "Product Price"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:79
+msgid "Product excerpt"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:80
+msgid "Product Add To Cart"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:81
+msgid "Manual"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:87
+msgid "Position"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:88
+msgid "Position Dose Not Apply For Manual"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:94
+msgid "Before"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:95
+msgid "After"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:103
+msgid "Image Size"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:110
+msgid "Small"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:111
+msgid "Medium"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:112
+msgid "Large"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:118
+msgid "HTML Template"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:119
+msgid "HTML Template For Brand Image . <br/> Use <code> {brand_images} </code> to get image tag.. <br/> do not add img html tag.. which will be auto generated."
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:129
+msgid "Custom Style"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:130
+msgid "Custom Styling For Product Brand Images <br/> please do not add <code><style></code> OR <code></style></code> tags. which will be auto generated"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:144
+msgid "Product Brand Images"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:146
+msgid "These settings affect the display and dimensions of images in your catalog - the display on the front-end will still be affected by CSS styles. After changing these settings you may need to <a href=\"%s\">regenerate your thumbnails</a>."
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:152
+msgid "Small Size"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:165
+msgid "Medium Size"
+msgstr ""
+
+#: admin/woocommerce-settings-simple.php:178
+msgid "Large Size"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:68
+msgctxt "Taxonomy General Name"
+msgid "Brands"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:69
+msgctxt "Taxonomy Singular Name"
+msgid "Brand"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:70
+msgid "Brands"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:71
+msgid "All Brands"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:72
+msgid "Parent Brand"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:73
+msgid "Parent Brand :"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:74
+msgid "New Brand Name"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:75
+msgid "Add New Brand"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:76
+msgid "Edit Brand"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:77
+msgid "Update Brand"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:78
+msgid "View Brand"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:79
+msgid "Separate Brands With Commas"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:80
+msgid "Add or remove Brands"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:81
+msgid "Choose from the most used"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:82
+msgid "Popular Brands"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:83
+msgid "Search Brands"
+msgstr ""
+
+#: includes/class-product-brands-functions.php:84
+msgid "Not Found"
+msgstr ""
+
+#: includes/welcome-template.php:57
+msgid "Subscribe to our mailing list"
+msgstr ""
+
+#: includes/welcome-template.php:64
+msgid "Email Address"
+msgstr ""
+
+#: includes/welcome-template.php:69
+msgid "First Name"
+msgstr ""
+
+#: includes/welcome-template.php:74
+msgid "Last Name"
+msgstr ""
+
+#: includes/welcome-template.php:78
+msgid "Website"
+msgstr ""
+
+#: includes/welcome-template.php:83
+msgid "Country"
+msgstr ""
+
+#: templates/brands-a-z.php:32
+msgid "&uarr; Top"
+msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "Product Brands For WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/product-brands-for-woocommerce/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Create, assign and list brands for products, and allow customers to filter by brand."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Varun Sridharan"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://varunsridharan.in"
+msgstr ""

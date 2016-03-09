@@ -119,8 +119,8 @@ class Product_Brands_For_WooCommerce {
         $this->define('PBF_WC_NAME','Product Brands For WooCommerce'); # Plugin Name
         $this->define('PBF_WC_SLUG','pb-wc'); # Plugin Slug
 		$this->define('PBF_WC_DB','pbf_wc_'); # Plugin Slug
-        $this->define('PBF_WC_PATH',plugin_dir_path( __FILE__ )); # Plugin DIR
-        $this->define('PBF_WC_LANGUAGE_PATH',PBF_WC_PATH.'languages');
+        $this->define('PBF_WC_PATH',plugin_dir_path( __FILE__ ).'/'); # Plugin DIR
+        $this->define('PBF_WC_LANGUAGE_PATH',PBF_WC_PATH.'languages/');
         $this->define('PBF_WC_TXT','product-brands-for-woocommerce'); #plugin lang Domain
         $this->define('PBF_WC_URL',plugins_url('', __FILE__ ).'/'); 
         $this->define('PBF_WC_FILE',plugin_basename( __FILE__ ));
