@@ -9,6 +9,7 @@
  * Text Domain:       product-brands-for-woocommerce
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt 
+ * Domain Path: /languages/
  * GitHub Plugin URI: @TODO
  */
 
@@ -45,7 +46,7 @@ class Product_Brands_For_WooCommerce {
         $this->define_constant();
         $this->load_required_files();
         $this->init_class();
-        add_action( 'init', array( $this, 'init' ));
+        $this->init();
     }
     
     /**

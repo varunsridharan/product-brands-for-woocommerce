@@ -2,7 +2,7 @@
 Contributors: varunms,arnisarbidans
 Author URI: http://varunsridharan.in/
 Plugin URL: https://wordpress.org/plugins/product-brands-for-woocommerce/
-Tags: WooCommerce
+Tags: WooCommerce,wc,products,brands,product brand,product brands,wc brands,wc product brands
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=36Y7KSYPF7KTU
 Requires at least: 3.0
 Tested up to: 4.3
@@ -42,26 +42,23 @@ The brands extension for WooCommerce allows you to create brands for your shop; 
 * `[pbf_wc_list]` For Listing All Brands In One Page Like A-Z Filter
 * `[pbf_wc_grid]` For Listing All Brands In One Page With Thier Brand Image
 
-= [pbf_wc] Shortcode Options =
+= [pbf_wc] Options =
 Use this shortcode to get product brand image any where `[pbf_wc]` 
-
-**Product ID :** use `[pbf_wc]` to get automaticly product id or use  `[pbf_wc id='23']`
-
-**Image Size :** small, medium, large `[pbf_wc size='small']` 
-
-**Remove Custom Style :** To Disable Custom Style Use  `[pbf_wc style='false']`
+* **Product ID :** use `[pbf_wc]` to get automaticly product id or use  `[pbf_wc id='23']`
+* **Image Size :** small, medium, large `[pbf_wc size='small']` 
+* **Remove Custom Style :** To Disable Custom Style Use  `[pbf_wc style='false']`
 
 
-= [pbf_wc_list] Shortcode Options =
-* **hide_empty : ** Allows To Hide A Brand If No Products Linked `[pbf_wc_list hide_empty='true']`
-* **orderby : **  Allows To Order Brands By **asc** OR **desc** `[pbf_wc_list orderby='asc']`
-* **exclude : **   Allows To Exclude Some Brands. just by entering the brand ids `[pbf_wc_list exclude='1,2,3']`
+= [pbf_wc_list] Options =
+* **hide_empty :** Hide A Brand If No Products Linked `[pbf_wc_list hide_empty='true']`
+* **orderby :**  Order Brands By **asc** OR **desc** `[pbf_wc_list orderby='asc']`
+* **exclude :**  Exclude Brands by entering the brand ids `[pbf_wc_list exclude='1,2,3']`
 
-= [pbf_wc_grid] Shortcode Options =
-* **hide_empty : ** Allows To Hide A Brand If No Products Linked `[pbf_wc_list hide_empty='true']`
-* **orderby : **  Allows To Order Brands By **asc** OR **desc** `[pbf_wc_list orderby='asc']`
-* **exclude : **  Allows To Exclude Some Brands. just by entering the brand ids `[pbf_wc_list exclude='1,2,3']`
-* **columns : **  Allows To Set Custom Coloum For Display `[pbf_wc_grid columns='3']`
+= [pbf_wc_grid] Options =
+* **hide_empty :** Hide A Brand If No Products Linked `[pbf_wc_list hide_empty='true']`
+* **orderby :**  Order Brands By **asc** OR **desc** `[pbf_wc_list orderby='asc']`
+* **exclude :**  Exclude Brands by entering the brand ids `[pbf_wc_list exclude='1,2,3']`
+* **columns :**  Set Custom Coloum For Display `[pbf_wc_grid columns='3']`
 
 
 
