@@ -5,10 +5,10 @@ Plugin URL: https://wordpress.org/plugins/product-brands-for-woocommerce/
 Tags: WooCommerce,wc,products,brands,product brand,product brands,wc brands,wc product brands
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=36Y7KSYPF7KTU
 Requires at least: 3.0
-Tested up to: 4.3
+Tested up to: 4.5
 WC requires at least: 1.0
-WC tested up to: 2.4.6
-Stable tag: 0.2
+WC tested up to: 2.5
+Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
@@ -97,6 +97,10 @@ The manual installation method involves downloading our plugin and uploading it 
  
 
 == Changelog == 
+= 0.3 =
+* Added Widgets
+* Added WC Filter Widgets
+
 = 0.2 =
 * Added 2 New Shortcode `pbf_wc_list` AND `pbf_wc_grid`
 * Added 2 New Templates

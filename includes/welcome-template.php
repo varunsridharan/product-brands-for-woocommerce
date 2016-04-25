@@ -39,10 +39,10 @@ Use this shortcode to get product brand image any where <code>[pbf_wc]</code><br
             
             <div>
                 <h3>Change Log</h3>
-                <p><strong> V 0.1 </strong> <br/>
-                    * First Release
+                <p><strong> V 0.3 </strong> <br/>
+                    * Added Widgets
                     
-                </p>
+                </p> 
             </div>
             
         </div>

@@ -3,7 +3,7 @@
  * Plugin Name:       Product Brands For WooCommerce
  * Plugin URI:        https://wordpress.org/plugins/product-brands-for-woocommerce/
  * Description:       Create, assign and list brands for products, and allow customers to filter by brand.
- * Version:           0.2
+ * Version:           0.3
  * Author:            Varun Sridharan
  * Author URI:        http://varunsridharan.in
  * Text Domain:       product-brands-for-woocommerce
@@ -19,7 +19,7 @@ class Product_Brands_For_WooCommerce {
 	/**
 	 * @var string
 	 */
-	public $version = '0.2';
+	public $version = '0.3';
 
 	/**
 	 * @var WooCommerce The single instance of the class
@@ -55,6 +55,7 @@ class Product_Brands_For_WooCommerce {
     public function init(){
         add_action('plugins_loaded', array( $this, 'after_plugins_loaded' ));
         add_filter('load_textdomain_mofile',  array( $this, 'load_plugin_mo_files' ), 10, 2);
+        add_action( 'widgets_init', array( $this, 'init_widgets' ) );
     }
     
     /**
@@ -96,6 +97,20 @@ class Product_Brands_For_WooCommerce {
         } 
     }
     
+	/**
+	 * init_widgets function.
+	 *
+	 * @access public
+	 */
+	public function init_widgets() {
+        $this->load_files(PBF_WC_PATH.'includes/widgets/*.php');
+		
+		// Register
+		register_widget( 'WC_Widget_Brand_Description' );
+		register_widget( 'WC_Widget_Brand_Nav' );
+		register_widget( 'WC_Widget_Brand_Thumbnails' );
+    }
+	    
     /**
      * Set Plugin Text Domain
      */
@@ -161,4 +176,23 @@ class Product_Brands_For_WooCommerce {
     
 }
 new Product_Brands_For_WooCommerce;
+
+if(!function_exists('get_brand_thumbnail_url')){
+    /**
+     * Helper function :: get_brand_thumbnail_url function.
+     *
+     * @access public
+     * @return string
+     */
+    function get_brand_thumbnail_url( $brand_id, $size = 'full' ) {
+        $thumbnail_id = get_woocommerce_term_meta( $brand_id, 'thumbnail_id', true );
+
+        if ( $thumbnail_id )
+            $thumb_src = wp_get_attachment_image_src( $thumbnail_id, $size );
+            if ( ! empty( $thumb_src ) ) {
+                return current( $thumb_src );
+            }
+    }    
+}
+
 ?>
