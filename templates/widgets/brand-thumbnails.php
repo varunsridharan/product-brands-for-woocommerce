@@ -18,7 +18,7 @@ if ( wp_validate_boolean( $fluid_columns ) ) {
 	
 	foreach ( $brands as $index => $brand ) :
 			$count++;
-		$thumbnail = get_brand_thumbnail_url( $brand->term_id, apply_filters( 'woocommerce_brand_thumbnail_size', 'brand-thumb' ) );
+		$thumbnail = pbf_wc_get_brand_thumbnail_url( $brand->term_id, apply_filters( 'woocommerce_brand_thumbnail_size', 'brand-thumb' ) );
 
 		if ( ! $thumbnail )
 			$thumbnail = wc_placeholder_img_src();

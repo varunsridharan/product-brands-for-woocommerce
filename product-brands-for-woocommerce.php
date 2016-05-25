@@ -132,7 +132,7 @@ class Product_Brands_For_WooCommerce {
      * Define Required Constant
      */
     private function define_constant(){
-        $this->define('PBF_WC_NAME','Product Brands For WooCommerce'); # Plugin Name
+        $this->define('PBF_WC_NAME',pbf_wc_name().' For WooCommerce'); # Plugin Name
         $this->define('PBF_WC_SLUG','pb-wc'); # Plugin Slug
 		$this->define('PBF_WC_DB','pbf_wc_'); # Plugin Slug
         $this->define('PBF_WC_PATH',plugin_dir_path( __FILE__ ).'/'); # Plugin DIR
@@ -175,24 +175,12 @@ class Product_Brands_For_WooCommerce {
     
     
 }
-new Product_Brands_For_WooCommerce;
 
-if(!function_exists('get_brand_thumbnail_url')){
-    /**
-     * Helper function :: get_brand_thumbnail_url function.
-     *
-     * @access public
-     * @return string
-     */
-    function get_brand_thumbnail_url( $brand_id, $size = 'full' ) {
-        $thumbnail_id = get_woocommerce_term_meta( $brand_id, 'thumbnail_id', true );
-
-        if ( $thumbnail_id )
-            $thumb_src = wp_get_attachment_image_src( $thumbnail_id, $size );
-            if ( ! empty( $thumb_src ) ) {
-                return current( $thumb_src );
-            }
-    }    
+require_once(__DIR__."/includes/functions.php");
+if(!function_exists('PBF_WC')){
+    function PBF_WC(){
+        return Product_Brands_For_WooCommerce::get_instance();
+    }
+    
+    PBF_WC();
 }
-
-?>

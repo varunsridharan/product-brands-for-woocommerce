@@ -24,14 +24,15 @@ class Product_Brands_For_WooCommerce_Settings extends WC_Settings_Page {
 	 */
 	public function __construct() { 
 		add_filter( 'woocommerce_get_sections_products', array( $this, 'add_section' ) );
-		add_filter( 'woocommerce_get_settings_products',  array( $this , 'get_settings'), 10, 2 ); 
+		add_filter( 'woocommerce_get_settings_products',  array( $this , 'get_settings'), 10, 2 );  
+        add_action( 'woocommerce_settings_save_products', array( $this, 'save' ) );
 	}
 
 	/**
 	 * Adds Settings SUB Menu Under Products
 	 */
-	public function add_section($sections){
-		$sections['pb_wc'] = __( 'Product Brands', PBF_WC_TXT );
+	public function add_section($sections){ 
+		$sections['pb_wc'] = __(pbf_wc_name(), PBF_WC_TXT );
 		return $sections;
 		
 	}
@@ -43,9 +44,11 @@ class Product_Brands_For_WooCommerce_Settings extends WC_Settings_Page {
 	 */
 	public function get_settings($settings = '', $current_section = '') {
 		if( $current_section == 'pb_wc'){
-			$settings = array(
+			$settings = array( 
+                
+                
 				array( 
-					'title' => __( 'Product Brands Shortcode', PBF_WC_TXT ), 
+					'title' => __( pbf_wc_name().' Shortcode', PBF_WC_TXT ), 
 					'type' => 'title', 
 					'desc' => __( 'Use this shortcode to get product brand image any where <code>[pbf_wc]</code> <br/>
 						<strong> Shortcode Vars : </strong> <br/>
@@ -61,11 +64,31 @@ class Product_Brands_For_WooCommerce_Settings extends WC_Settings_Page {
 					'id' => 'product_bands_shortcode_end'
 				),
 				array( 
-					'title' => __( 'Product Brands Settings', PBF_WC_TXT ), 
+					'title' => __( pbf_wc_name().' Settings', PBF_WC_TXT ), 
 					'type' => 'title', 
 					'desc' => '', 
 					'id' => 'product_bands_settings_start' 
 				),
+                
+                array(
+					'title'    => __( 'Custom Name', PBF_WC_TXT ),
+					'desc'     => __( 'Rename Product Brands into your own requirement', PBF_WC_TXT ),
+					'id'       => PBF_WC_DB.'custom_brands_name', 
+					'default'  => 'Product Brands',
+					'type'     => 'text',  
+					'autoload' => true
+				), 
+                
+                array(
+					'title'    => __( 'Custom URL Slug', PBF_WC_TXT ),
+					'desc'     => __( 'Your custom url slug to replace product_brands from url', PBF_WC_TXT ),
+					'id'       => PBF_WC_DB.'custom_url_slug', 
+					'default'  => 'product_brands',
+					'type'     => 'text',  
+					'autoload' => true
+				), 
+                
+                
 				array(
 					'title'    => __( 'Where To Show', PBF_WC_TXT ),
 					'desc'     => __( 'If you select manual then you can use shortcode', PBF_WC_TXT ),
@@ -141,7 +164,7 @@ class Product_Brands_For_WooCommerce_Settings extends WC_Settings_Page {
 					'id' => 'product_bands_settings_end'
 				),
 				array(
-					'title' => __( 'Product Brand Images', PBF_WC_TXT ),
+					'title' => __( pbf_wc_name().' Images', PBF_WC_TXT ),
 					
 					'desc' 	=> sprintf( __( 'These settings affect the display and dimensions of images in your catalog - the display on the front-end will still be affected by CSS styles. After changing these settings you may need to <a href="%s">regenerate your thumbnails</a>.', PBF_WC_TXT ), 'http://wordpress.org/extend/plugins/regenerate-thumbnails/' ),
 					'type' 	=> 'title',
@@ -204,9 +227,10 @@ class Product_Brands_For_WooCommerce_Settings extends WC_Settings_Page {
 	 * Save settings
 	 */
 	public function save() {
+        add_option(PBF_WC_DB.'flush_permalink','flush_now');
 		$settings = $this->get_settings();
-
 		WC_Admin_Settings::save_fields( $settings );
+        
 	}
 
 }
@@ -214,4 +238,3 @@ class Product_Brands_For_WooCommerce_Settings extends WC_Settings_Page {
 endif;
 
 return new Product_Brands_For_WooCommerce_Settings();
-?>

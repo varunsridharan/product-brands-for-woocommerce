@@ -4,8 +4,8 @@ if ( ! defined( 'WPINC' ) ) { die; }
  
 class Product_Brands_For_WooCommerce_Admin_Function {
 	public function __construct(){
-		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
-		add_action( 'save_post', array( $this, 'save_post' ) );
+		//add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
+		//add_action( 'save_post', array( $this, 'save_post' ) );
 		add_filter( 'manage_edit-product_brands_columns', array( $this, 'product_cat_columns' ) );
 		add_filter( 'manage_product_brands_custom_column', array( $this, 'product_cat_column' ), 10, 3 );
 		add_action( 'product_brands_add_form_fields', array( $this, 'add_category_fields' ) );

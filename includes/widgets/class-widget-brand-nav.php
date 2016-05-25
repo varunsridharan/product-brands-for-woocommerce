@@ -24,7 +24,7 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 		$this->woo_widget_cssclass    = 'widget_brand_nav widget_layered_nav';
 		$this->woo_widget_description = __( 'Shows brands in a widget which lets you narrow down the list of products when viewing products.', 'wc_brands' );
 		$this->woo_widget_idbase      = 'wc_product_brands_nav';
-		$this->woo_widget_name        = __('WC Product Brands Layered Nav', 'wc_brands' );
+		$this->woo_widget_name        = __('WC '.pbf_wc_name().' Layered Nav', 'wc_brands' );
 
 		/* Widget settings. */
 		$widget_ops = array( 'classname' => $this->woo_widget_cssclass, 'description' => $this->woo_widget_description );

@@ -21,7 +21,7 @@ class WC_Widget_Brand_Description extends WP_Widget {
 	function __construct() {
 
 		/* Widget variable settings. */
-		$this->woo_widget_name        = __(' WC Product Brands Description', 'wc_brands' );
+		$this->woo_widget_name        = __(' WC '.pbf_wc_name().' Description', 'wc_brands' );
 		$this->woo_widget_description = __( 'When viewing a brand archive, show the current brands description.', 'wc_brands' );
 		$this->woo_widget_idbase      = 'wc_brands_brand_description';
 		$this->woo_widget_cssclass    = 'widget_brand_description';
@@ -46,7 +46,7 @@ class WC_Widget_Brand_Description extends WP_Widget {
 		$thumbnail = '';
 		$term      = get_term_by( 'slug', get_query_var( 'term' ), 'product_brands' );
 
-		$thumbnail = get_brand_thumbnail_url( $term->term_id, 'large' );
+		$thumbnail = pbf_wc_get_brand_thumbnail_url( $term->term_id, 'large' );
 
 		echo $before_widget . $before_title . $term->name . $after_title;
 

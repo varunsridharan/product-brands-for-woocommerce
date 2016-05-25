@@ -21,7 +21,7 @@ class WC_Widget_Brand_Thumbnails extends WP_Widget {
 	public function __construct() {
 
 		/* Widget variable settings. */
-		$this->woo_widget_name        = __(' WC Product Brands Thumbnails', 'wc_brands' );
+		$this->woo_widget_name        = __(' WC '.pbf_wc_name().' Thumbnails', 'wc_brands' );
 		$this->woo_widget_description = __( 'Show a grid of brand thumbnails.', 'wc_brands' );
 		$this->woo_widget_idbase      = 'wc_brands_brand_thumbnails';
 		$this->woo_widget_cssclass    = 'widget_brand_thumbnails';
