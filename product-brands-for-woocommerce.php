@@ -3,7 +3,7 @@
  * Plugin Name:       Product Brands For WooCommerce
  * Plugin URI:        https://wordpress.org/plugins/product-brands-for-woocommerce/
  * Description:       Create, assign and list brands for products, and allow customers to filter by brand.
- * Version:           0.3
+ * Version:           0.4
  * Author:            Varun Sridharan
  * Author URI:        http://varunsridharan.in
  * Text Domain:       product-brands-for-woocommerce
@@ -19,7 +19,7 @@ class Product_Brands_For_WooCommerce {
 	/**
 	 * @var string
 	 */
-	public $version = '0.3';
+	public $version = '0.4';
 
 	/**
 	 * @var WooCommerce The single instance of the class

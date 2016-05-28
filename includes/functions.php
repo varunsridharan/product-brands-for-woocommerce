@@ -21,16 +21,16 @@ if(!function_exists('pbf_wc_get_brand_thumbnail_url')){
 
 if(!function_exists('pbf_wc_name')){
     function pbf_wc_name(){
-        $name = get_option(PBF_WC_DB.'custom_brands_name',true);
-        if(empty($name)){$name = "Product Brands";}
+        $name = get_option(PBF_WC_DB.'custom_brands_name',false);
+        if(empty($name)){$name = "Product Brand";}
         return $name;
     }
 }
 
 if(!function_exists('pbf_wc_url_slug')){
     function pbf_wc_url_slug(){
-        $slug = get_option(PBF_WC_DB.'custom_url_slug',true);
-        if(empty($slug)){$slug = "Product Brands";}
+        $slug = get_option(PBF_WC_DB.'custom_url_slug',false);
+        if(empty($slug)){$slug = "Product Brand";}
         return sanitize_text_field($slug);
         
     }
