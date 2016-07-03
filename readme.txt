@@ -7,8 +7,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 3.0
 Tested up to: 5.0
 WC requires at least: 1.0
-WC tested up to: 2.6
-Stable tag: 0.4
+WC tested up to: 2.8
+Stable tag: 0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
@@ -97,6 +97,10 @@ The manual installation method involves downloading our plugin and uploading it 
  
 
 == Changelog == 
+= 0.5 =
+* Fixed Issue with settings page. (Still showing old settings page fixed).
+* Minor Bug Fix Done.
+
 = 0.4 = 
 * Fixed Minor Bugs
 * Added Feature To Rename `Product Brands`
