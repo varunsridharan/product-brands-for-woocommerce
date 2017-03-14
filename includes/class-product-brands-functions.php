@@ -100,7 +100,14 @@ class Product_Brands_For_WooCommerce_Function {
 			'show_admin_column'          => true,
 			'show_in_nav_menus'          => true,
 			'show_tagcloud'              => true,
-            'rewrite'                    => $rewrite,
+            		'rewrite'                    => $rewrite,
+			'capabilities' => array(
+      					'manage_terms'=> 'manage_product_brands',
+      					'edit_terms'=> 'manage_product_brands',
+      					'delete_terms'=> 'manage_product_brands',
+      					'assign_terms' => 'read'
+    				),
+    			'map_meta_cap' => true
 		);
         
         $args = apply_filters('pbf_wc_taxonomy_args',$args);
