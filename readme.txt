@@ -2,13 +2,14 @@
 Contributors: varunms,arnis.arbidans
 Author URI: http://varunsridharan.in/
 Plugin URL: https://wordpress.org/plugins/product-brands-for-woocommerce/
-Tags: WooCommerce,wc,products,brands,product brand,product brands,wc brands,wc product brands
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=36Y7KSYPF7KTU
+Tags: WooCommerce,wc,products,brands,product brand,product brands,wc brands,wc product brands,ecommerce, featured, filter, manufacturer, shop, woocommerce,admin, category, distributor,  plugin, shortcode, sidebar, supplier, Taxonomy, widget, woocommerce manufaturer, woocommerce supplier, wordpress
+
+Donate link: https://www.paypal.me/varunsridharan23
 Requires at least: 3.0
 Tested up to: 5.0
 WC requires at least: 1.0
-WC tested up to: 2.8
-Stable tag: 0.5
+WC tested up to: 2.9
+Stable tag: 0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
@@ -96,7 +97,20 @@ The manual installation method involves downloading our plugin and uploading it 
 2. Activate the plugin through the 'Plugins' menu in WordPress
  
 
-== Changelog == 
+== Changelog ==
+= 0.7 =
+* Fixed Minor Issues
+* Added Option To Hide Count for brands in listing widget
+* Tested With Latest WordPress & WooComerce
+
+
+= 0.6 =
+* Fixed Dropdown Brands View Widget Error
+* Fixed Notice Error When Debug Is Turned On.
+* Fixed Incorrect Name Error
+* Fixed Minor Bugs
+* Tested With Latest WordPress & WooCommerce
+
 = 0.5 =
 * Fixed Issue with settings page. (Still showing old settings page fixed).
 * Minor Bug Fix Done.

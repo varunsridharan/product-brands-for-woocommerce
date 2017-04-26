@@ -22,15 +22,15 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 
 		/* Widget variable settings. */
 		$this->woo_widget_cssclass    = 'widget_brand_nav widget_layered_nav';
-		$this->woo_widget_description = __( 'Shows brands in a widget which lets you narrow down the list of products when viewing products.', 'wc_brands' );
-		$this->woo_widget_idbase      = 'wc_product_brands_nav';
-		$this->woo_widget_name        = __('WC '.pbf_wc_name().' Layered Nav', 'wc_brands' );
+		$this->woo_widget_description = __( 'Shows brands in a widget which lets you narrow down the list of products when viewing products.', PBF_WC_TXT );
+		$this->woo_widget_idbase      = 'woocommerce_brand_nav';
+		$this->woo_widget_name        = pbf_wc_name().__(' Layered Nav', PBF_WC_TXT );
 
 		/* Widget settings. */
 		$widget_ops = array( 'classname' => $this->woo_widget_cssclass, 'description' => $this->woo_widget_description );
 
 		/* Create the widget. */
-		parent::__construct( 'wc_product_brands_nav', $this->woo_widget_name, $widget_ops);
+		parent::__construct( 'woocommerce_brand_nav', $this->woo_widget_name, $widget_ops);
 	}
 
 	/**
@@ -71,9 +71,20 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 			echo $before_widget . $before_title . $title . $after_title;
 
 			// Force found when option is selected - do not force found on taxonomy attributes
-			if ( ! $_attributes_array || ! is_tax( $_attributes_array ) )
-				if ( is_array( $_chosen_attributes ) && array_key_exists( $taxonomy, $_chosen_attributes ) )
+			if ( ! $_attributes_array || ! is_tax( $_attributes_array ) ) {
+				if ( is_array( $_chosen_attributes ) && array_key_exists( $taxonomy, $_chosen_attributes ) ) {
 					$found = true;
+				}
+			}
+
+			// Base Link decided by current page
+			if ( defined( 'SHOP_IS_ON_FRONT' ) ) {
+				$link = home_url();
+			} elseif ( is_post_type_archive( 'product' ) || is_page( wc_get_page_id('shop') ) ) {
+				$link = get_post_type_archive_link( 'product' );
+			} else {
+				$link = get_term_link( get_query_var('term'), get_query_var('taxonomy') );
+			}
 
 			if ( $display_type == 'dropdown' ) {
 
@@ -90,7 +101,7 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 
 					echo '<select id="dropdown_layered_nav_' . $taxonomy_filter . '">';
 
-					echo '<option value="">' . __( 'Any brand', 'wc_brands' ) .'</option>';
+					echo '<option value="">' . __( 'Any brand', PBF_WC_TXT ) .'</option>';
 
 					foreach ( $terms as $term ) {
 
@@ -113,25 +124,24 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 						// only show options with count > 0
 						$count = sizeof( array_intersect( $_products_in_term, $woocommerce->query->filtered_product_ids ) );
 
-						if ( $count > 0 )
+						if ( $count > 0 ) {
 							$found = true;
+						}
 
-						//if ( $count == 0 && ! $option_is_set )
-						//	continue;
+						if ( 0 === $count && ! $option_is_set ) {
+							continue;
+						}
 
-						echo '<option value="' . $term->term_id . '" '.selected( isset( $_GET[ 'filter_product_brand' ] ) ? $_GET[ 'filter_product_brand' ] : '' , $term->term_id, false ) . '>' . $term->name . '</option>';
+						echo '<option value="' . $term->term_id . '" '.selected( isset( $_GET[ 'filter_product_brands' ] ) ? $_GET[ 'filter_product_brands' ] : '' , $term->term_id, false ) . '>' . $term->name . '</option>';
 					}
 
 					echo '</select>';
-
-					$shop_page_id = wc_get_page_id( 'shop' );
-					$shop_page = get_permalink( $shop_page_id );
 
 					$js = "
 
 						jQuery('#dropdown_layered_nav_$taxonomy_filter').change(function(){
 
-							location.href = '" . esc_url_raw( add_query_arg( 'filtering', '1', $shop_page ) ). "&filter_product_brand=' + jQuery('#dropdown_layered_nav_$taxonomy_filter').val();
+							location.href = '" . esc_url_raw( add_query_arg( 'filtering', '1', $link ) ). "&filter_product_brands=' + jQuery('#dropdown_layered_nav_$taxonomy_filter').val();
 
 						});
 
@@ -176,22 +186,13 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 					if ( $count == 0 && ! $option_is_set )
 						continue;
 
-					$current_filter = ( isset( $_GET[ 'filter_product_brand' ] ) ) ? explode( ',', $_GET[ 'filter_product_brand' ] ) : array();
+					$current_filter = ( isset( $_GET[ 'filter_product_brands' ] ) ) ? explode( ',', $_GET[ 'filter_product_brands' ] ) : array();
 
 					if ( ! is_array( $current_filter ) )
 						$current_filter = array();
 
 					if ( ! in_array( $term->term_id, $current_filter ) )
 						$current_filter[] = $term->term_id;
-
-					// Base Link decided by current page
-					if ( defined( 'SHOP_IS_ON_FRONT' ) ) {
-						$link = home_url();
-					} elseif ( is_post_type_archive( 'product' ) || is_page( woocommerce_get_page_id('shop') ) ) {
-						$link = get_post_type_archive_link( 'product' );
-					} else {
-						$link = get_term_link( get_query_var('term'), get_query_var('taxonomy') );
-					}
 
 					// All current filters
 					if ( $_chosen_attributes ) {
@@ -218,19 +219,19 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 						$link = add_query_arg( 'max_price', $_GET['max_price'], $link );
 
 					// Current Filter = this widget
-					if ( isset( $_chosen_attributes['product_brand'] ) && is_array( $_chosen_attributes['product_brand']['terms'] ) && in_array( $term->term_id, $_chosen_attributes['product_brand']['terms'] ) ) {
+					if ( isset( $_chosen_attributes['product_brands'] ) && is_array( $_chosen_attributes['product_brands']['terms'] ) && in_array( $term->term_id, $_chosen_attributes['product_brands']['terms'] ) ) {
 
 						$class = 'class="chosen"';
 
 						// Remove this term is $current_filter has more than 1 term filtered
 						if ( sizeof( $current_filter ) > 1 ) {
 							$current_filter_without_this = array_diff( $current_filter, array( $term->term_id ) );
-							$link = add_query_arg( 'filter_product_brand', implode( ',', $current_filter_without_this ), $link );
+							$link = add_query_arg( 'filter_product_brands', implode( ',', $current_filter_without_this ), $link );
 						}
 
 					} else {
 						$class = '';
-						$link = add_query_arg( 'filter_product_brand', implode( ',', $current_filter ), $link );
+						$link = add_query_arg( 'filter_product_brands', implode( ',', $current_filter ), $link );
 					}
 
 					// Search Arg
@@ -258,10 +259,11 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 
 			echo $after_widget;
 
-			if ( ! $found )
+			if ( ! $found ) {
 				ob_end_clean();
-			else
+			} else {
 				echo ob_get_clean();
+			}
 		}
 	}
 
@@ -278,7 +280,7 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 		global $woocommerce;
 
 		if ( empty( $new_instance['title'] ) )
-			$new_instance['title'] = __( 'Brands', 'wc_brands' );
+			$new_instance['title'] = __( 'Brands', PBF_WC_TXT );
 
 		$instance['title']        = strip_tags( stripslashes( $new_instance['title'] ) );
 		$instance['display_type'] = stripslashes( $new_instance['display_type'] );
@@ -300,13 +302,13 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 		if ( ! isset( $instance['display_type'] ) )
 			$instance['display_type'] = 'list';
 		?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'wc_brands' ) ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', PBF_WC_TXT ) ?></label>
 		<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php if ( isset( $instance['title'] ) ) echo esc_attr( $instance['title'] ); ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'display_type' ); ?>"><?php _e( 'Display Type:', 'wc_brands' ) ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'display_type' ); ?>"><?php _e( 'Display Type:', PBF_WC_TXT ) ?></label>
 		<select id="<?php echo esc_attr( $this->get_field_id( 'display_type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_type' ) ); ?>">
-			<option value="list" <?php selected( $instance['display_type'], 'list' ); ?>><?php _e( 'List', 'wc_brands' ); ?></option>
-			<option value="dropdown" <?php selected( $instance['display_type'], 'dropdown' ); ?>><?php _e( 'Dropdown', 'wc_brands' ); ?></option>
+			<option value="list" <?php selected( $instance['display_type'], 'list' ); ?>><?php _e( 'List', PBF_WC_TXT ); ?></option>
+			<option value="dropdown" <?php selected( $instance['display_type'], 'dropdown' ); ?>><?php _e( 'Dropdown', PBF_WC_TXT ); ?></option>
 		</select></p>
 		<?php
 	}
@@ -322,16 +324,16 @@ class WC_Widget_Brand_Nav extends WP_Widget {
 function woocommerce_brands_layered_nav_init( $filtered_posts ) {
 	global $woocommerce, $_chosen_attributes;
 
-	if ( is_active_widget( false, false, 'wc_product_brands_nav', true ) && ! is_admin() ) {
+	if ( is_active_widget( false, false, 'woocommerce_brand_nav', true ) && ! is_admin() ) {
 
-		if ( ! empty( $_GET[ 'filter_product_brand' ] ) ) {
+		if ( ! empty( $_GET[ 'filter_product_brands' ] ) ) {
 
-			$terms 	= array_map( 'intval', explode( ',', $_GET[ 'filter_product_brand' ] ) );
+			$terms 	= array_map( 'intval', explode( ',', $_GET[ 'filter_product_brands' ] ) );
 
 			if ( sizeof( $terms ) > 0 ) {
 
-				$_chosen_attributes['product_brand']['terms'] = $terms;
-				$_chosen_attributes['product_brand']['query_type'] = 'and';
+				$_chosen_attributes['product_brands']['terms'] = $terms;
+				$_chosen_attributes['product_brands']['query_type'] = 'and';
 
 				$matched_products = get_posts(
 					array(

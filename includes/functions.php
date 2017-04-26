@@ -20,11 +20,19 @@ if(!function_exists('pbf_wc_get_brand_thumbnail_url')){
 
 
 if(!function_exists('pbf_wc_name')){
-    function pbf_wc_name(){
-        $name = get_option(PBF_WC_DB.'custom_brands_name',false);
-        if(empty($name)){$name = "Product Brand";}
+    function pbf_wc_name($plural = false){
+        if($plural){
+            $name = get_option(PBF_WC_DB.'custom_brands_name_plural',false);
+        } else {
+            $name = get_option(PBF_WC_DB.'custom_brands_name',false);
+        }
+            
+        if(empty($name)){
+            $name = "Product Brand";
+        }
+        
         return $name;
-    }
+    } 
 }
 
 if(!function_exists('pbf_wc_url_slug')){

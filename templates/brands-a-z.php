@@ -29,7 +29,7 @@
 		</ul>
 		
 		<?php if ( $show_top_links ) : ?>
-			<a class="top" href="#brands_a_z"><?php _e( '&uarr; Top', 'wc_brands' ) ?></a>
+			<a class="top" href="#brands_a_z"><?php _e( '&uarr; Top', PBF_WC_TXT ) ?></a>
 		<?php endif; ?>
 
 	<?php endif; ?>

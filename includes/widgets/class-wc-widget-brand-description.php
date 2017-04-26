@@ -21,8 +21,8 @@ class WC_Widget_Brand_Description extends WP_Widget {
 	function __construct() {
 
 		/* Widget variable settings. */
-		$this->woo_widget_name        = __(' WC '.pbf_wc_name().' Description', 'wc_brands' );
-		$this->woo_widget_description = __( 'When viewing a brand archive, show the current brands description.', 'wc_brands' );
+		$this->woo_widget_name        = pbf_wc_name().__(' Description', PBF_WC_TXT );
+		$this->woo_widget_description = __( 'When viewing a brand archive, show the current brands description.', PBF_WC_TXT );
 		$this->woo_widget_idbase      = 'wc_brands_brand_description';
 		$this->woo_widget_cssclass    = 'widget_brand_description';
 
@@ -47,11 +47,12 @@ class WC_Widget_Brand_Description extends WP_Widget {
 		$term      = get_term_by( 'slug', get_query_var( 'term' ), 'product_brands' );
 
 		$thumbnail = pbf_wc_get_brand_thumbnail_url( $term->term_id, 'large' );
-
+        
 		echo $before_widget . $before_title . $term->name . $after_title;
 
-		woocommerce_get_template( 'widgets/brand-description.php', array(
-			'thumbnail' => $thumbnail
+		wc_get_template( 'widgets/brand-description.php', array(
+			'thumbnail' => $thumbnail,
+			'brand' => $term
 		), 'woocommerce-brands', untrailingslashit( plugin_dir_path( dirname( dirname( __FILE__ ) ) ) ) . '/templates/' );
 
 		echo $after_widget;
@@ -67,7 +68,7 @@ class WC_Widget_Brand_Description extends WP_Widget {
 	function form( $instance ) {
 		?>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'wc_brands') ?></label>
+				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', PBF_WC_TXT) ?></label>
 				<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php if ( isset ( $instance['title'] ) ) echo esc_attr( $instance['title'] ); ?>" />
 			</p>
 		<?php

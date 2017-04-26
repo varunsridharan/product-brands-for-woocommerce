@@ -71,9 +71,18 @@ class Product_Brands_For_WooCommerce_Settings extends WC_Settings_Page {
 				),
                 
                 array(
-					'title'    => __( 'Custom Name', PBF_WC_TXT ),
-					'desc'     => __( 'Rename Product Brands into your own requirement', PBF_WC_TXT ),
+					'title'    => __( 'Singular Custom Name', PBF_WC_TXT ),
+					'desc'     => __( 'Enter a Rename Product Brands into your own requirement ', PBF_WC_TXT ),
 					'id'       => PBF_WC_DB.'custom_brands_name', 
+					'default'  => 'Product Brand',
+					'type'     => 'text',  
+					'autoload' => true
+				), 
+                
+                array(
+					'title'    => __( 'Plural Custom Name', PBF_WC_TXT ),
+					'desc'     => __( 'Enter a Rename Product Brands into your own requirement ', PBF_WC_TXT ),
+					'id'       => PBF_WC_DB.'custom_brands_name_plural', 
 					'default'  => 'Product Brands',
 					'type'     => 'text',  
 					'autoload' => true
@@ -150,7 +159,7 @@ class Product_Brands_For_WooCommerce_Settings extends WC_Settings_Page {
 				
 				array(
 					'title'    => __( 'Custom Style', PBF_WC_TXT ),
-					'desc'     =>  __( 'Custom Styling For Product Brand Images <br/> please do not add <code><style></code> OR <code></style></code> tags. which will be auto generated', PBF_WC_TXT ),
+					'desc'     =>  __( 'Custom Styling For Product Brand Images <br/> please do not add <code>style</code> opening / closing tags. which will be auto generated', PBF_WC_TXT ),
 					'id'       => PBF_WC_DB.'custom_style', 
 					'default'  => '',
 					'css' => 'width:75%;',

@@ -65,10 +65,10 @@ class Product_Brands_For_WooCommerce_Function {
 	public function product_brands() {
 
 		$labels = array(
-			'name'                       => _x( pbf_wc_name().'s', 'Taxonomy General Name', PBF_WC_TXT ),
+			'name'                       => _x( pbf_wc_name(true), 'Taxonomy General Name', PBF_WC_TXT ),
 			'singular_name'              => _x( pbf_wc_name().'', 'Taxonomy Singular Name', PBF_WC_TXT ),
-			'menu_name'                  => __( pbf_wc_name().'s', PBF_WC_TXT ),
-			'all_items'                  => __( 'All '.pbf_wc_name().'s', PBF_WC_TXT ),
+			'menu_name'                  => __( pbf_wc_name(true), PBF_WC_TXT ),
+			'all_items'                  => __( 'All '.pbf_wc_name(true), PBF_WC_TXT ),
 			'parent_item'                => __( 'Parent '.pbf_wc_name(), PBF_WC_TXT ),
 			'parent_item_colon'          => __( 'Parent '.pbf_wc_name().' :', PBF_WC_TXT ),
 			'new_item_name'              => __( 'New '.pbf_wc_name().' Name', PBF_WC_TXT ),

@@ -3,7 +3,7 @@
  * Plugin Name:       Product Brands For WooCommerce
  * Plugin URI:        https://wordpress.org/plugins/product-brands-for-woocommerce/
  * Description:       Create, assign and list brands for products, and allow customers to filter by brand.
- * Version:           0.5
+ * Version:           0.7
  * Author:            Varun Sridharan
  * Author URI:        http://varunsridharan.in
  * Text Domain:       product-brands-for-woocommerce
@@ -19,7 +19,7 @@ class Product_Brands_For_WooCommerce {
 	/**
 	 * @var string
 	 */
-	public $version = '0.5';
+	public $version = '0.7';
 
 	/**
 	 * @var WooCommerce The single instance of the class
@@ -103,12 +103,24 @@ class Product_Brands_For_WooCommerce {
 	 * @access public
 	 */
 	public function init_widgets() {
-        $this->load_files(PBF_WC_PATH.'includes/widgets/*.php');
+        // Inc
+
+        $this->load_files(PBF_WC_PATH.'includes/widgets/class-wc-widget-brand-description.php');
 		
+        if ( version_compare( WC_VERSION, '2.6.0', '>=' ) ) {
+            $this->load_files(PBF_WC_PATH.'includes/widgets/class-wc-widget-brand-nav.php');
+		} else {
+            $this->load_files(PBF_WC_PATH.'includes/widgets/class-wc-widget-brand-nav-deprecated.php');
+		}
+        
+        $this->load_files(PBF_WC_PATH.'includes/widgets/class-wc-widget-brand-thumbnails.php');
+        
+
 		// Register
 		register_widget( 'WC_Widget_Brand_Description' );
 		register_widget( 'WC_Widget_Brand_Nav' );
 		register_widget( 'WC_Widget_Brand_Thumbnails' );
+         
     }
 	    
     /**
@@ -134,7 +146,7 @@ class Product_Brands_For_WooCommerce {
     private function define_constant(){
         $this->define('PBF_WC_NAME',pbf_wc_name().' For WooCommerce'); # Plugin Name
         $this->define('PBF_WC_SLUG','pb-wc'); # Plugin Slug
-		$this->define('PBF_WC_DB','pbf_wc_'); # Plugin Slug
+		//$this->define('PBF_WC_DB','pbf_wc_'); # Plugin Slug
         $this->define('PBF_WC_PATH',plugin_dir_path( __FILE__ ).'/'); # Plugin DIR
         $this->define('PBF_WC_LANGUAGE_PATH',PBF_WC_PATH.'languages/');
         $this->define('PBF_WC_TXT','product-brands-for-woocommerce'); #plugin lang Domain
@@ -176,6 +188,8 @@ class Product_Brands_For_WooCommerce {
     
 }
 
+define('PBF_WC_DB','pbf_wc_');
+    
 require_once(__DIR__."/includes/functions.php");
 if(!function_exists('PBF_WC')){
     function PBF_WC(){

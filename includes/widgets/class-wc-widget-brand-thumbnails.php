@@ -21,8 +21,8 @@ class WC_Widget_Brand_Thumbnails extends WP_Widget {
 	public function __construct() {
 
 		/* Widget variable settings. */
-		$this->woo_widget_name        = __(' WC '.pbf_wc_name().' Thumbnails', 'wc_brands' );
-		$this->woo_widget_description = __( 'Show a grid of brand thumbnails.', 'wc_brands' );
+		$this->woo_widget_name        = pbf_wc_name().__(' Thumbnails', PBF_WC_TXT );
+		$this->woo_widget_description = __( 'Show a grid of brand thumbnails.', PBF_WC_TXT );
 		$this->woo_widget_idbase      = 'wc_brands_brand_thumbnails';
 		$this->woo_widget_cssclass    = 'widget_brand_thumbnails';
 
@@ -53,7 +53,7 @@ class WC_Widget_Brand_Thumbnails extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
-		woocommerce_get_template( 'widgets/brand-thumbnails.php', array(
+		wc_get_template( 'widgets/brand-thumbnails.php', array(
 			'brands'        => $brands,
 			'columns'       => $instance['columns'],
 			'fluid_columns' => ! empty( $instance['fluid_columns'] ) ? true : false,
@@ -111,43 +111,43 @@ class WC_Widget_Brand_Thumbnails extends WP_Widget {
 
 		?>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'wc_brands') ?></label>
+				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', PBF_WC_TXT) ?></label>
 				<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php if ( isset ( $instance['title'] ) ) echo esc_attr( $instance['title'] ); ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'columns' ); ?>"><?php _e('Columns:', 'wc_brands') ?></label>
+				<label for="<?php echo $this->get_field_id( 'columns' ); ?>"><?php _e('Columns:', PBF_WC_TXT) ?></label>
 				<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'columns' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'columns' ) ); ?>" value="<?php if ( isset ( $instance['columns'] ) ) echo esc_attr( $instance['columns'] ); else echo '1'; ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'fluid_columns' ); ?>"><?php _e('Fluid columns:', 'wc_brands') ?></label>
+				<label for="<?php echo $this->get_field_id( 'fluid_columns' ); ?>"><?php _e('Fluid columns:', PBF_WC_TXT) ?></label>
 				<input type="checkbox" <?php checked( $instance['fluid_columns'] ); ?> id="<?php echo esc_attr( $this->get_field_id( 'fluid_columns' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'fluid_columns' ) ); ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e('Number:', 'wc_brands') ?></label>
-				<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" value="<?php if ( isset ( $instance['number'] ) ) echo esc_attr( $instance['number'] ); ?>" placeholder="<?php _e('All', 'wc_brands'); ?>" />
+				<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e('Number:', PBF_WC_TXT) ?></label>
+				<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" value="<?php if ( isset ( $instance['number'] ) ) echo esc_attr( $instance['number'] ); ?>" placeholder="<?php _e('All', PBF_WC_TXT); ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'exclude' ); ?>"><?php _e('Exclude:', 'wc_brands') ?></label>
-				<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'exclude' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'exclude' ) ); ?>" value="<?php if ( isset ( $instance['exclude'] ) ) echo esc_attr( $instance['exclude'] ); ?>" placeholder="<?php _e('None', 'wc_brands'); ?>" />
+				<label for="<?php echo $this->get_field_id( 'exclude' ); ?>"><?php _e('Exclude:', PBF_WC_TXT) ?></label>
+				<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'exclude' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'exclude' ) ); ?>" value="<?php if ( isset ( $instance['exclude'] ) ) echo esc_attr( $instance['exclude'] ); ?>" placeholder="<?php _e('None', PBF_WC_TXT); ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'hide_empty' ); ?>"><?php _e('Hide empty brands:', 'wc_brands') ?></label>
+				<label for="<?php echo $this->get_field_id( 'hide_empty' ); ?>"><?php _e('Hide empty brands:', PBF_WC_TXT) ?></label>
 				<select id="<?php echo esc_attr( $this->get_field_id( 'hide_empty' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'hide_empty' ) ); ?>">
-					<option value="1" <?php selected( $instance['hide_empty'], 1 ) ?>><?php _e('Yes', 'wc_brands') ?></option>
-					<option value="0" <?php selected( $instance['hide_empty'], 0 ) ?>><?php _e('No', 'wc_brands') ?></option>
+					<option value="1" <?php selected( $instance['hide_empty'], 1 ) ?>><?php _e('Yes', PBF_WC_TXT) ?></option>
+					<option value="0" <?php selected( $instance['hide_empty'], 0 ) ?>><?php _e('No', PBF_WC_TXT) ?></option>
 				</select>
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'orderby' ); ?>"><?php _e('Order by:', 'wc_brands') ?></label>
+				<label for="<?php echo $this->get_field_id( 'orderby' ); ?>"><?php _e('Order by:', PBF_WC_TXT) ?></label>
 				<select id="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'orderby' ) ); ?>">
-					<option value="name" <?php selected( $instance['orderby'], 'name' ) ?>><?php _e('Name', 'wc_brands') ?></option>
-					<option value="count" <?php selected( $instance['orderby'], 'count' ) ?>><?php _e('Count', 'wc_brands') ?></option>
+					<option value="name" <?php selected( $instance['orderby'], 'name' ) ?>><?php _e('Name', PBF_WC_TXT) ?></option>
+					<option value="count" <?php selected( $instance['orderby'], 'count' ) ?>><?php _e('Count', PBF_WC_TXT) ?></option>
 				</select>
 			</p>
 		<?php
