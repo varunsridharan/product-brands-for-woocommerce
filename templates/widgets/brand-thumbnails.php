@@ -17,12 +17,7 @@ if ( wp_validate_boolean( $fluid_columns ) ) {
 	$brands = array_values( $brands );
 	
 	foreach ( $brands as $index => $brand ) :
-			$count++;
-		$thumbnail = pbf_wc_get_brand_thumbnail_url( $brand->term_id, apply_filters( 'woocommerce_brand_thumbnail_size', 'brand-thumb' ) );
-
-		if ( ! $thumbnail )
-			$thumbnail = wc_placeholder_img_src();
-
+		$count++;
 		$class = '';
 
 		if ( $index == 0 || $index % $columns == 0 ) {
@@ -42,9 +37,10 @@ if ( wp_validate_boolean( $fluid_columns ) ) {
 			$style_att = ' style="width: ' . intval( $width ) . '%;"';
 		}
 		?>
+
 		<li class="<?php echo esc_attr( $class ); ?>"<?php echo $style_att; ?>>
-			<a href="<?php echo get_term_link( $brand->slug, 'product_brands' ); ?>" title="<?php echo $brand->name; ?>">
-				<img src="<?php echo $thumbnail; ?>" alt="<?php echo $brand->name; ?>" />
+			<a href="<?php echo esc_url( get_term_link( $brand->slug, 'product_brands' ) ); ?>" title="<?php echo esc_attr( $brand->name ); ?>">
+				<?php echo '<img src="'.pbf_wc_get_brand_thumbnail_url( $brand ).'" title="'.$brand->name.'" alt="'.$brand->name.'"/>'; ?>
 			</a>
 		</li>
 

@@ -1,332 +1,1082 @@
-# Copyright (C) 2017 Product Brands For WooCommerce
+# Copyright (C) 2018 Product Brands For WooCommerce
 # This file is distributed under the same license as the Product Brands For WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Product Brands For WooCommerce 0.7\n"
+"Project-Id-Version: Product Brands For WooCommerce 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/product-brands-for-woocommerce\n"
-"POT-Creation-Date: 2017-02-16 04:35:29+00:00\n"
+"POT-Creation-Date: 2018-01-02 11:18:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: admin/class-admin-functions.php:23
-msgid "Product Brand Image"
+#: bootstrap.php:25
+msgid "Product Brands For WC Settings"
 msgstr ""
 
-#: admin/class-admin-functions.php:38
-msgid "Set Product Brand Image"
+#: bootstrap.php:29 includes/admin/class-admin-metaboxes.php:271
+msgid "Product Brands For WooCommerce"
 msgstr ""
 
-#: admin/class-admin-functions.php:39
-msgid "Select Product Brand Image"
+#: bootstrap.php:40
+msgid "Save Settings"
 msgstr ""
 
-#: admin/class-admin-functions.php:46 admin/class-admin-functions.php:47
-msgid "Remove Product Brand Image"
-msgstr ""
-
-#: admin/class-admin-functions.php:69
-msgid "Image"
-msgstr ""
-
-#: admin/class-admin-functions.php:99 admin/class-admin-functions.php:181
+#: includes/admin/class-admin-metaboxes.php:23
+#: includes/admin/class-admin-metaboxes.php:40
 msgid "Thumbnail"
 msgstr ""
 
-#: admin/class-admin-functions.php:112
-msgid "Brand Logo"
+#: includes/admin/class-admin-metaboxes.php:24
+msgid "Select Brand Logo"
 msgstr ""
 
-#: admin/class-admin-functions.php:116 admin/class-admin-functions.php:186
-msgid "Upload/Add image"
+#: includes/admin/class-admin-metaboxes.php:32
+msgid "Image"
 msgstr ""
 
-#: admin/class-admin-functions.php:117 admin/class-admin-functions.php:187
-msgid "Remove image"
+#: includes/admin/class-admin-metaboxes.php:50
+msgid "Product"
 msgstr ""
 
-#: admin/class-admin-functions.php:134 admin/class-admin-functions.php:199
-msgid "Choose an image"
-msgstr ""
-
-#: admin/class-admin-functions.php:136 admin/class-admin-functions.php:201
-msgid "Use image"
-msgstr ""
-
-#: admin/class-admin-init.php:102
-msgid "Settings"
-msgstr ""
-
-#: admin/class-admin-init.php:103
-msgid "F.A.Q"
-msgstr ""
-
-#: admin/class-admin-init.php:104
-msgid "View On Github"
-msgstr ""
-
-#: admin/class-admin-init.php:105
-msgid "Report Issue"
-msgstr ""
-
-#: admin/class-admin-init.php:106
-msgid "Donate"
-msgstr ""
-
-#: admin/class-admin-init.php:107
-msgid "Contact Author"
-msgstr ""
-
-#: admin/woocommerce-settings.php:53
-msgid ""
-"Use this shortcode to get product brand image any where <code>[pbf_wc]</code> <br/>\n"
-"\t\t\t\t\t\t<strong> Shortcode Vars : </strong> <br/>\n"
-"\t\t\t\t\t\t<strong> Product ID : </strong> use <code>[pbf_wc]</code> to get automaticly product id or use  <code>[pbf_wc id='23']</code>\n"
-"\t\t\t\t\t\t<strong> Image Size : </strong> small, medium, large <code> [pbf_wc size='small']</code> <br/>\n"
-"\t\t\t\t\t\t<strong> Custom Style :  </strong> To Disable Custom Style Use  <code> [pbf_wc style='false']</code> <br/>\n"
-"\t\t\t\t\t\n"
-"\t\t\t\t\t"
-msgstr ""
-
-#: admin/woocommerce-settings.php:74
-msgid "Singular Custom Name"
-msgstr ""
-
-#: admin/woocommerce-settings.php:75 admin/woocommerce-settings.php:84
-msgid "Enter a Rename Product Brands into your own requirement "
-msgstr ""
-
-#: admin/woocommerce-settings.php:83
-msgid "Plural Custom Name"
-msgstr ""
-
-#: admin/woocommerce-settings.php:92
-msgid "Custom URL Slug"
-msgstr ""
-
-#: admin/woocommerce-settings.php:93
-msgid "Your custom url slug to replace product_brands from url"
-msgstr ""
-
-#: admin/woocommerce-settings.php:102
-msgid "Where To Show"
-msgstr ""
-
-#: admin/woocommerce-settings.php:103
-msgid "If you select manual then you can use shortcode"
-msgstr ""
-
-#: admin/woocommerce-settings.php:109
-msgid "Product Title"
-msgstr ""
-
-#: admin/woocommerce-settings.php:110
-msgid "Product Price"
-msgstr ""
-
-#: admin/woocommerce-settings.php:111
-msgid "Product excerpt"
-msgstr ""
-
-#: admin/woocommerce-settings.php:112
-msgid "Product Add To Cart"
-msgstr ""
-
-#: admin/woocommerce-settings.php:113
-msgid "Manual"
-msgstr ""
-
-#: admin/woocommerce-settings.php:119
-msgid "Position"
-msgstr ""
-
-#: admin/woocommerce-settings.php:120
-msgid "Position Dose Not Apply For Manual"
-msgstr ""
-
-#: admin/woocommerce-settings.php:126
-msgid "Before"
-msgstr ""
-
-#: admin/woocommerce-settings.php:127
-msgid "After"
-msgstr ""
-
-#: admin/woocommerce-settings.php:135
+#: includes/admin/class-admin-metaboxes.php:64 includes/class-settings.php:81
 msgid "Image Size"
 msgstr ""
 
-#: admin/woocommerce-settings.php:142
+#: includes/admin/class-admin-metaboxes.php:68
+msgid "Choose Image Size"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:69 includes/class-settings.php:85
 msgid "Small"
 msgstr ""
 
-#: admin/woocommerce-settings.php:143
+#: includes/admin/class-admin-metaboxes.php:70 includes/class-settings.php:86
 msgid "Medium"
 msgstr ""
 
-#: admin/woocommerce-settings.php:144
+#: includes/admin/class-admin-metaboxes.php:71 includes/class-settings.php:87
 msgid "Large"
 msgstr ""
 
-#: admin/woocommerce-settings.php:150
-msgid "HTML Template"
+#: includes/admin/class-admin-metaboxes.php:72
+msgid "Custom"
 msgstr ""
 
-#: admin/woocommerce-settings.php:151
-msgid "HTML Template For Brand Image . <br/> Use <code> {brand_images} </code> to get image tag.. <br/> do not add img html tag.. which will be auto generated."
+#: includes/admin/class-admin-metaboxes.php:78
+msgid "Image Width"
 msgstr ""
 
-#: admin/woocommerce-settings.php:161
-msgid "Custom Style"
+#: includes/admin/class-admin-metaboxes.php:85
+msgid "Image Height"
 msgstr ""
 
-#: admin/woocommerce-settings.php:162
-msgid "Custom Styling For Product Brand Images <br/> please do not add <code>style</code> opening / closing tags. which will be auto generated"
+#: includes/admin/class-admin-metaboxes.php:92
+msgid "Image Class"
 msgstr ""
 
-#: admin/woocommerce-settings.php:178
-msgid "These settings affect the display and dimensions of images in your catalog - the display on the front-end will still be affected by CSS styles. After changing these settings you may need to <a href=\"%s\">regenerate your thumbnails</a>."
+#: includes/admin/class-admin-metaboxes.php:103
+#: includes/admin/class-admin-metaboxes.php:155
+msgid "Show Empty ?"
 msgstr ""
 
-#: admin/woocommerce-settings.php:184
-msgid "Small Size"
+#: includes/admin/class-admin-metaboxes.php:108
+#: includes/admin/class-admin-metaboxes.php:160
+#: includes/admin/class-admin-metaboxes.php:229
+msgid "No of Columns"
 msgstr ""
 
-#: admin/woocommerce-settings.php:197
-msgid "Medium Size"
+#: includes/admin/class-admin-metaboxes.php:114
+#: includes/admin/class-admin-metaboxes.php:166
+#: includes/admin/class-admin-metaboxes.php:233
+msgid "Order By"
 msgstr ""
 
-#: admin/woocommerce-settings.php:210
-msgid "Large Size"
+#: includes/admin/class-admin-metaboxes.php:116
+#: includes/admin/class-admin-metaboxes.php:168
+#: vsp-framework/libs/wpsf/classes/options.php:147
+msgid "ID"
 msgstr ""
 
-#: includes/class-product-brands-functions.php:81
-msgid "Choose from the most used"
-msgstr ""
-
-#: includes/class-product-brands-functions.php:84
-msgid "Not Found"
-msgstr ""
-
-#: includes/welcome-template.php:57
-msgid "Subscribe to our mailing list"
-msgstr ""
-
-#: includes/welcome-template.php:64
-msgid "Email Address"
-msgstr ""
-
-#: includes/welcome-template.php:69
-msgid "First Name"
-msgstr ""
-
-#: includes/welcome-template.php:74
-msgid "Last Name"
-msgstr ""
-
-#: includes/welcome-template.php:78
-msgid "Website"
-msgstr ""
-
-#: includes/welcome-template.php:83
-msgid "Country"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-description.php:25
-msgid "When viewing a brand archive, show the current brands description."
-msgstr ""
-
-#: includes/widgets/class-widget-brand-description.php:70
-#: includes/widgets/class-widget-brand-nav.php:306
-#: includes/widgets/class-widget-brand-thumbnails.php:114
-msgid "Title:"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-nav.php:25
-msgid "Shows brands in a widget which lets you narrow down the list of products when viewing products."
-msgstr ""
-
-#: includes/widgets/class-widget-brand-nav.php:94
-msgid "Any brand"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-nav.php:284
-msgid "Brands"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-nav.php:309
-msgid "Display Type:"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-nav.php:311
-msgid "List"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-nav.php:312
-msgid "Dropdown"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-nav.php:315
-msgid "Show Count ?:"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:25
-msgid "Show a grid of brand thumbnails."
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:119
-msgid "Columns:"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:124
-msgid "Fluid columns:"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:129
-msgid "Number:"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:130
-msgid "All"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:134
-msgid "Exclude:"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:135
-msgid "None"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:139
-msgid "Hide empty brands:"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:141
-msgid "Yes"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:142
-msgid "No"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:147
-msgid "Order by:"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:149
-msgid "Name"
-msgstr ""
-
-#: includes/widgets/class-widget-brand-thumbnails.php:150
+#: includes/admin/class-admin-metaboxes.php:117
+#: includes/admin/class-admin-metaboxes.php:169
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:150
 msgid "Count"
 msgstr ""
 
-#: templates/brands-a-z.php:32
+#: includes/admin/class-admin-metaboxes.php:118
+#: includes/admin/class-admin-metaboxes.php:170
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:149
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:58
+msgid "Name"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:119
+#: includes/admin/class-admin-metaboxes.php:171
+msgid "Slug"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:128
+#: includes/admin/class-admin-metaboxes.php:180
+msgid "Exclude Brand "
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:129
+#: includes/admin/class-admin-metaboxes.php:181
+msgid "Select a Brand To Exclude"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:138
+#: includes/admin/class-admin-metaboxes.php:190
+msgid "Max Number Item to return"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:139
+#: includes/admin/class-admin-metaboxes.php:191
+msgid "The maximum number of terms to return. By default all of them are returned."
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:144
+msgid "Fluid Columns ?"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:201
+msgid "Show Top Links"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:207
+msgid "Show Empty Links"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:213
+msgid "Show Empty Brands"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:224
+msgid "Products Per Page"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:234
+msgid "More Options Avaiable @ %s"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:234
+msgid "OrderBy"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:240
+msgid "Order"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:244
+msgid "Ascending"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:245
+msgid "Descending"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:254
+msgid "Brands To Show"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:255
+msgid "From Which Brands Product should display ?"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:275
+msgid "Single"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:281
+msgid "Thumbnails"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:287
+msgid "Thumbnail Description"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:292
+#: includes/widgets/class-wc-widget-brand-nav.php:173
+msgid "List"
+msgstr ""
+
+#: includes/admin/class-admin-metaboxes.php:297
+msgid "Products"
+msgstr ""
+
+#: includes/class-frontend-display.php:187
+msgid "%1$s: "
+msgid_plural "%2$s: "
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-register-taxonomy.php:26
+msgid "Choose from the most used"
+msgstr ""
+
+#: includes/class-register-taxonomy.php:29
+msgid "Not Found"
+msgstr ""
+
+#: includes/class-settings.php:12
+msgid "General"
+msgstr ""
+
+#: includes/class-settings.php:17
+msgid "Name Settings"
+msgstr ""
+
+#: includes/class-settings.php:18
+msgid "Output / Display"
+msgstr ""
+
+#: includes/class-settings.php:19
+msgid "Image Sizes"
+msgstr ""
+
+#: includes/class-settings.php:27
+msgid "Singular Custom Name"
+msgstr ""
+
+#: includes/class-settings.php:28 includes/class-settings.php:37
+msgid "Enter a Rename Product Brands into your own requirement"
+msgstr ""
+
+#: includes/class-settings.php:36
+msgid "Plural Custom Name"
+msgstr ""
+
+#: includes/class-settings.php:44
+msgid "Custom URL Slug"
+msgstr ""
+
+#: includes/class-settings.php:45
+msgid "Your custom url slug to replace product_brands from url"
+msgstr ""
+
+#: includes/class-settings.php:50
+msgid "Where To Show"
+msgstr ""
+
+#: includes/class-settings.php:51
+msgid "If you select manual then you can use shortcode"
+msgstr ""
+
+#: includes/class-settings.php:55
+msgid "Product Title"
+msgstr ""
+
+#: includes/class-settings.php:56
+msgid "Product Price"
+msgstr ""
+
+#: includes/class-settings.php:57
+msgid "Product excerpt"
+msgstr ""
+
+#: includes/class-settings.php:58
+msgid "Product Add To Cart"
+msgstr ""
+
+#: includes/class-settings.php:59
+msgid "Manual"
+msgstr ""
+
+#: includes/class-settings.php:67
+msgid "Position"
+msgstr ""
+
+#: includes/class-settings.php:71
+msgid "Before"
+msgstr ""
+
+#: includes/class-settings.php:72
+msgid "After"
+msgstr ""
+
+#: includes/class-settings.php:95
+msgid "Link To Brand Page"
+msgstr ""
+
+#: includes/class-settings.php:98 includes/class-settings.php:107
+msgid "Adds Link To Brand Term Page with brand image ?"
+msgstr ""
+
+#: includes/class-settings.php:103
+msgid "Show In Product Meta "
+msgstr ""
+
+#: includes/class-settings.php:106
+msgid "If enabled this will look like this in single product page"
+msgstr ""
+
+#: includes/class-settings.php:111
+msgid "These settings affect the display and dimensions of images in your catalog – the display on the front-end will still be affected by CSS styles. After changing these settings you may need to %s regenerate your thumbnails %s."
+msgstr ""
+
+#: includes/class-settings.php:121
+msgid "Small Image Size"
+msgstr ""
+
+#: includes/class-settings.php:132
+msgid "Medium Image Size"
+msgstr ""
+
+#: includes/class-settings.php:143
+msgid "Large Image Size"
+msgstr ""
+
+#: includes/class-settings.php:154
+msgid "Default Brand Image"
+msgstr ""
+
+#: includes/class-settings.php:155
+msgid "This Image Will Be Used If No Image Selected For Brand"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-description.php:24
+msgid " Description"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-description.php:25
+msgid "When viewing a brand archive, show the current brands description."
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-description.php:71
+#: includes/widgets/class-wc-widget-brand-nav.php:168
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:114
+msgid "Title:"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-nav.php:19
+msgid "Shows brands in a widget which lets you narrow down the list of products when viewing products."
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-nav.php:21
+msgid " Layered Nav"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-nav.php:146
+msgid "Brands"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-nav.php:171
+msgid "Display Type:"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-nav.php:174
+msgid "Dropdown"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-nav.php:275
+msgid "Any Brand"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:24
+msgid " Thumbnails"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:25
+msgid "Show a grid of brand thumbnails."
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:119
+msgid "Columns:"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:124
+msgid "Fluid columns:"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:129
+msgid "Number:"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:130
+#: vsp-framework/class/addons/class-vsp-addons-core.php:10
+msgid "All"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:134
+msgid "Exclude:"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:135
+msgid "None"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:139
+msgid "Hide empty brands:"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:141
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:128
+msgid "Yes"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:142
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:128
+msgid "No"
+msgstr ""
+
+#: includes/widgets/class-wc-widget-brand-thumbnails.php:147
+msgid "Order by:"
+msgstr ""
+
+#: product-brands-for-woocommerce.php:87
+msgid "%s Requires WooCommerce To Be Installed & Activated."
+msgstr ""
+
+#: templates/shortcodes/brands-a-z.php:35
 msgid "&uarr; Top"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-admin.php:63
+msgid "Search Plugins"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-admin.php:138
+msgid "View WP All Import Pro Changelog"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-admin.php:138
+msgid "View details"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-admin.php:145
+#: vsp-framework/class/addons/class-vsp-addons-filemeta.php:111
+msgid "Required Plugins"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-admin.php:147
+msgid "Above Mentioned Plugin name with version are Tested Upto"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-admin.php:168
+msgid "Activate"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-admin.php:169
+msgid "De Activate"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-core.php:11
+#: vsp-framework/class/addons/class-vsp-addons-core.php:227
+msgid "Active"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-core.php:12
+#: vsp-framework/class/addons/class-vsp-addons-core.php:220
+msgid "In Active"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-core.php:223
+msgid "Not Exist"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-filemeta.php:12
+msgid "Duplicate Addon Found. Unable to load Please contact the developer with below information %s"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-filemeta.php:112
+msgid "Screenshots"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons-filemeta.php:113
+msgid "FAQ"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons.php:47
+msgid "%s Has deactivated the following addons because its required plugins are deactivated"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons.php:91
+msgid "Addon Action Not Provided"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons.php:92
+msgid "No Addon Selected"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons.php:93
+msgid "Unable To Process Your Request"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons.php:97
+msgid "Invalid Addon"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons.php:106
+msgid "Addon's Requried Plugins Not Active / Installed"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons.php:113
+msgid "Addon Activated"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons.php:117
+msgid "Addon Already Active"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons.php:126
+msgid "Addon De-Activated"
+msgstr ""
+
+#: vsp-framework/class/addons/class-vsp-addons.php:130
+msgid "Addon Is Not Active"
+msgstr ""
+
+#: vsp-framework/class/class-vsp-class-handler.php:22
+msgid "Cloning instances of the class is forbidden."
+msgstr ""
+
+#: vsp-framework/class/class-vsp-class-handler.php:26
+msgid "Unserializing instances of the class is forbidden."
+msgstr ""
+
+#: vsp-framework/class/class-vsp-taxonomy-handler.php:41
+msgid "VSP Shortcodes"
+msgstr ""
+
+#: vsp-framework/class/settings/class-vsp-settings-wpsf.php:146
+msgid "System Status"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-settings-metaboxes.php:96
+msgid "F A Q's"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:46
+msgid "Theme Name"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:47
+msgid "Theme Version"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:48
+msgid "Theme URI"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:49
+msgid "Theme Description"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:50
+msgid "Theme Author"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:51
+msgid "Theme AuthorURI"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:52
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:132
+msgid "Parent Theme"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:59
+msgid "PluginURI"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:60
+msgid "Version"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:61
+msgid "Author"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:62
+msgid "AuthorURI"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:100
+msgid "Home URL"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:101
+msgid "Site URL"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:102
+msgid "WP Version"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:103
+msgid "WP Language"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:104
+msgid "Multisite"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:105
+msgid "WP Memory Limit"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:106
+msgid "WP Table Prefix"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:107
+msgid "WP Timezone"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:108
+msgid "WP Remote Post"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:108
+msgid "Enabled"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:108
+msgid "Disabled"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:109
+msgid "Permalink Structure"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:110
+msgid "Registered Post Stati"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:111
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:113
+msgid "Show On Front"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:112
+msgid "Page On Front"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:114
+msgid "Server Info"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:115
+msgid "Host"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:116
+msgid "Default Timezone"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:119
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:121
+msgid "MySql Version"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:128
+msgid "Is Child Theme"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:174
+msgid "PHP Version"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:175
+msgid "PHP Post Max Size"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:176
+msgid "PHP Time Limit"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:177
+msgid "PHP Max Input Vars"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:178
+msgid "PHP Safe Mode"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:179
+msgid "PHP Memory Limit"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:180
+msgid "PHP Upload Max Size"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:181
+msgid "PHP Arg Separator"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:182
+msgid "PHP Allow URL File Open"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:183
+msgid "Display Errors"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:184
+msgid "FSOCKOPEN"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:185
+msgid "cURL"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:186
+msgid "SOAP Client"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:187
+msgid "SUHOSIN"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:188
+msgid "Session"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:189
+msgid "Session Name"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:190
+msgid "Cookie Path"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:191
+msgid "Save Path"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:192
+msgid "Use Cookies"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:193
+msgid "Use Only Cookies"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:199
+msgid "Framework Version"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:200
+msgid "Textdomain"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:201
+msgid "DomainPath"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:202
+msgid "Framework Plugin Path"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:203
+msgid "Framework Path"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:216
+msgid "WordPress Environment"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:217
+msgid "VSP Framework"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:218
+msgid "VSP Plugin Settings"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:219
+msgid "Server Environment"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:220
+msgid "PHP Environment"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:221
+msgid "PHP Extenstions"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:222
+msgid "Session Config"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:223
+msgid "Active Theme"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:224
+msgid "Active Plugins"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:225
+msgid "Muilti Site Plugins"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:226
+msgid "WordPress Must Use Plugins"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:280
+msgid "To copy the System Status, click below then press Ctrl + C (PC) or Cmd + C (Mac)"
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:282
+msgid "Please copy and paste this information in your ticket when contacting support: "
+msgstr ""
+
+#: vsp-framework/class/tools/class-vsp-site-status-report.php:285
+msgid "Get system report"
+msgstr ""
+
+#: vsp-framework/functions/wp-replacement.php:107
+msgid "By %s."
+msgstr ""
+
+#: vsp-framework/libs/wp-background-process.php:434
+msgid "Every %d minutes"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/options.php:118
+msgid "CONFIG"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/options.php:124
+#: vsp-framework/libs/wpsf/classes/options.php:143
+msgid "USAGE"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/options.php:130
+msgid "VALUE"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/options.php:213
+msgid "You are editing language: ( %s )"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/settings.php:46
+msgid "Save"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/settings.php:47
+msgid "Restore"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/settings.php:48
+#: vsp-framework/libs/wpsf/fields/backup/backup.php:29
+msgid "Reset All Options"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/settings.php:274
+msgid "Success. Imported backup options."
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/settings.php:278
+msgid "Default options restored."
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/settings.php:296
+msgid "Default options restored for only this section."
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/settings.php:429
+msgid "Saving..."
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/shortcode-manager.php:69
+#: vsp-framework/libs/wpsf/classes/shortcode-manager.php:106
+#: vsp-framework/libs/wpsf/fields/textarea/textarea.php:25
+msgid "Add Shortcode"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/shortcode-manager.php:110
+msgid "Select a shortcode"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/classes/shortcode-manager.php:126
+msgid "Insert Shortcode"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/background/background.php:36
+#: vsp-framework/libs/wpsf/fields/background/background.php:37
+#: vsp-framework/libs/wpsf/fields/upload/upload.php:25
+#: vsp-framework/libs/wpsf/fields/upload/upload.php:26
+msgid "Upload"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/background/background.php:38
+#: vsp-framework/libs/wpsf/fields/upload/upload.php:27
+msgid "Use Image"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/backup/backup.php:21
+msgid "Import a Backup"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/backup/backup.php:22
+msgid "copy-paste your backup string here"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/backup/backup.php:27
+msgid "Export and Download Backup"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/backup/backup.php:28
+msgid "or"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/backup/backup.php:30
+msgid "Please be sure for reset all of framework options."
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/gallery/gallery.php:22
+msgid "Add Gallery"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/gallery/gallery.php:23
+msgid "Edit Gallery"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/gallery/gallery.php:24
+msgid "Clear"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/group/group.php:23
+msgid "Adding"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/group/group.php:45
+#: vsp-framework/libs/wpsf/fields/group/group.php:77
+msgid "Remove"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/icon/icon.php:25
+#: vsp-framework/libs/wpsf/functions/actions.php:79
+msgid "Add Icon"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/icon/icon.php:26
+msgid "Remove Icon"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/image/image.php:23
+msgid "Add Image"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/image_size/image_size.php:26
+msgid "Width"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/image_size/image_size.php:41
+msgid "Height"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/image_size/image_size.php:53
+msgid "Hard Crop ?"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/links/links.php:35
+msgid "URL :"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/links/links.php:36
+msgid "Title :"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/links/links.php:37
+msgid "Target :"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/links/links.php:38
+msgid "Select URL"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/sorter/sorter.php:46
+msgid "Enabled Modules"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/sorter/sorter.php:47
+msgid "Disabled Modules"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/switcher/switcher.php:20
+msgid "on"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/switcher/switcher.php:20
+msgid "off"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/typography/typography.php:72
+msgid "Web Safe Fonts"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/typography/typography.php:78
+msgid "Google Fonts"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/fields/typography/typography.php:107
+#: vsp-framework/libs/wpsf/functions/actions.php:33
+msgid "Error! Can not load json file."
+msgstr ""
+
+#: vsp-framework/libs/wpsf/functions/actions.php:80
+msgid "Search a Icon..."
+msgstr ""
+
+#: vsp-framework/libs/wpsf/functions/actions.php:81
+msgid "Loading..."
+msgstr ""
+
+#: vsp-framework/libs/wpsf/functions/helpers.php:54
+msgid "This field class is not available!"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/functions/validate.php:28
+msgid "Please write a valid email address!"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/functions/validate.php:45
+msgid "Please write a numeric data!"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/functions/validate.php:62
+msgid "Fatal Error! This field is required!"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/templates/settings/modern/header.php:8
+#: vsp-framework/libs/wpsf/templates/settings/simple/footer.php:5
+#: vsp-framework/views/settings/modern/header.php:11
+#: vsp-framework/views/settings/simple/footer.php:5
+msgid "Settings Saved"
+msgstr ""
+
+#: vsp-framework/libs/wpsf/templates/settings/modern/header.php:15
+#: vsp-framework/views/settings/modern/header.php:18
+msgid "show all options"
+msgstr ""
+
+#: vsp-framework/views/settings-add.php:10
+msgid "Downloads / Installs"
+msgstr ""
+
+#: vsp-framework/views/settings-add.php:11
+msgid "Price"
+msgstr ""
+
+#: vsp-framework/views/settings-add.php:11
+msgid "Free"
+msgstr ""
+
+#: vsp-framework/views/settings-add.php:19
+msgid "Purchase Plugin"
+msgstr ""
+
+#: vsp-framework/views/settings-add.php:19
+msgid "View Plugin Page"
 msgstr ""
 #. Plugin Name of the plugin/theme
 msgid "Product Brands For WooCommerce"

@@ -3,13 +3,12 @@ Contributors: varunms,arnis.arbidans
 Author URI: http://varunsridharan.in/
 Plugin URL: https://wordpress.org/plugins/product-brands-for-woocommerce/
 Tags: WooCommerce,wc,products,brands,product brand,product brands,wc brands,wc product brands,ecommerce, featured, filter, manufacturer, shop, woocommerce,admin, category, distributor,  plugin, shortcode, sidebar, supplier, Taxonomy, widget, woocommerce manufaturer, woocommerce supplier, wordpress
-
 Donate link: https://www.paypal.me/varunsridharan23
 Requires at least: 3.0
 Tested up to: 5.0
 WC requires at least: 1.0
-WC tested up to: 2.9
-Stable tag: 0.7
+WC tested up to: 3.9
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
@@ -33,40 +32,30 @@ The brands extension for WooCommerce allows you to create brands for your shop; 
 
 = Options =
 **Settings Menu**
-` WooCommerce Settings => Products => Product Brands `
+` WooCommerce Settings => Product Brands `
 
 **Brands Menu**
-` WooCommerce Products => Brands `
+` WooCommerce Products => Products Brands `
 
 = Available Shortcode =
 * `[pbf_wc]` For Listing Brand Image For Single Product
-* `[pbf_wc_list]` For Listing All Brands In One Page Like A-Z Filter
-* `[pbf_wc_grid]` For Listing All Brands In One Page With Thier Brand Image
-
-= [pbf_wc] Options =
-Use this shortcode to get product brand image any where `[pbf_wc]` 
-* **Product ID :** use `[pbf_wc]` to get automaticly product id or use  `[pbf_wc id='23']`
-* **Image Size :** small, medium, large `[pbf_wc size='small']` 
-* **Remove Custom Style :** To Disable Custom Style Use  `[pbf_wc style='false']`
-
-
-= [pbf_wc_list] Options =
-* **hide_empty :** Hide A Brand If No Products Linked `[pbf_wc_list hide_empty='true']`
-* **orderby :**  Order Brands By **asc** OR **desc** `[pbf_wc_list orderby='asc']`
-* **exclude :**  Exclude Brands by entering the brand ids `[pbf_wc_list exclude='1,2,3']`
-
-= [pbf_wc_grid] Options =
-* **hide_empty :** Hide A Brand If No Products Linked `[pbf_wc_list hide_empty='true']`
-* **orderby :**  Order Brands By **asc** OR **desc** `[pbf_wc_list orderby='asc']`
-* **exclude :**  Exclude Brands by entering the brand ids `[pbf_wc_list exclude='1,2,3']`
-* **columns :**  Set Custom Coloum For Display `[pbf_wc_grid columns='3']`
-
-
+* `[pbf_wc_products]` For Listing All Products In Selected /All Brands
+* '[pbf_wc_brand_list]` For Listing All Brands In A-Z Order
+* `[pbf_wc_thumbnails]` For Listing All Brands In One Page With Thier Brand Image
 
 == Screenshots ==
 1. Settings Page
-2. Adding Product Brands
-3. Setting Product Brands For Product
+2. Settings Page
+3. Settings Page
+4. Settings Page
+5. Product Brands In Product Menu
+6. Add Product Brands Page
+7. Product Brands Taxonomy Listing
+8. Product Brands Edit Page
+9. Product Brands Selector In Products Page
+10. Quick Shortcode Generator
+11. Quick Shortcode Generator
+
 
 == Installation ==
 
@@ -98,6 +87,10 @@ The manual installation method involves downloading our plugin and uploading it 
  
 
 == Changelog ==
+= 1.0 =
+* Total Plugin Redeveloped
+* Tested With latest WP & WC
+
 = 0.7 =
 * Fixed Minor Issues
 * Added Option To Hide Count for brands in listing widget

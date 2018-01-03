@@ -7,7 +7,7 @@
 
 	<?php foreach ( $brands as $index => $brand ) :
 
-		$thumbnail = pbf_wc_get_brand_thumbnail_url( $brand->term_id, apply_filters( 'woocommerce_brand_thumbnail_size', 'brand-thumb' ) );
+		$thumbnail = pbf_wc_get_brand_thumbnail_url( $brand->term_id, apply_filters( 'pbf_wc_brand_thumbail_size', 'pbf_wc_small' ) );
 
 		if ( ! $thumbnail )
 			$thumbnail = wc_placeholder_img_src();

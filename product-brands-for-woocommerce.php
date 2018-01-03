@@ -1,200 +1,101 @@
 <?php
 /**
- * Plugin Name:       Product Brands For WooCommerce
- * Plugin URI:        https://wordpress.org/plugins/product-brands-for-woocommerce/
- * Description:       Create, assign and list brands for products, and allow customers to filter by brand.
- * Version:           0.7
+ * The plugin bootstrap file
+ *
+ * This file is read by WordPress to generate the plugin information in the plugin
+ * admin area. This file also includes all of the dependencies used by the plugin,
+ * registers the activation and deactivation functions, and defines a function
+ * that starts the plugin.
+ *
+ * @wordpress-plugin
+ * Plugin Name:  Product Brands For WooCommerce
+ * Plugin URI:   https://wordpress.org/plugins/product-brands-for-woocommerce/
+ * Description:  Create, assign and list brands for products, and allow customers to filter by brand.
+ * Version:           1.0
  * Author:            Varun Sridharan
  * Author URI:        http://varunsridharan.in
  * Text Domain:       product-brands-for-woocommerce
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt 
- * Domain Path: /languages/
- * GitHub Plugin URI: @TODO
+ * Domain Path: languages/
  */
+define('PBF_WC_DEPEN','woocommerce/woocommerce.php');
+define('PBF_WC_NAME', 'Product Brands For WooCommerce'); # Plugin Name
+define('PBF_WC_SLUG', 'product-brands-for-woocommerce'); # Plugin Slug
+define('PBF_WC_TXT',  'product-brands-for-woocommerce'); #plugin lang Domain
+define('PBF_WC_DB', 'pbf_wc_');
+define('PBF_WC_V','1.0'); # Plugin Version
 
-if ( ! defined( 'WPINC' ) ) { die; }
- 
-class Product_Brands_For_WooCommerce {
-	/**
-	 * @var string
-	 */
-	public $version = '0.7';
+define('PBF_WC_FILE',plugin_basename( __FILE__ ));
+define('PBF_WC_PATH',plugin_dir_path( __FILE__ )); # Plugin DIR
+define('PBF_WC_FRAMEWORK',PBF_WC_PATH.'vs-framework/'); # Plugin DIR
+define('PBF_WC_INC',PBF_WC_PATH.'includes/'); # Plugin INC Folder
+define('PBF_WC_LANGUAGE_PATH',PBF_WC_PATH.'languages/'); # Plugin Language Folder
+define('PBF_WC_ADMIN',PBF_WC_INC.'admin/'); # Plugin Admin Folder
 
-	/**
-	 * @var WooCommerce The single instance of the class
-	 * @since 2.1
-	 */
-	protected static $_instance = null;
-    
-    protected static $functions = null;
+define('PBF_WC_URL',plugins_url('', __FILE__ ).'/');  # Plugin URL
+define('PBF_WC_CSS',PBF_WC_URL.'includes/css/'); # Plugin CSS URL
+define('PBF_WC_IMG',PBF_WC_URL.'includes/img/'); # Plugin IMG URL
+define('PBF_WC_JS',PBF_WC_URL.'includes/js/'); # Plugin JS URL
 
-    /**
-     * Creates or returns an instance of this class.
-     */
-    public static function get_instance() {
-        if ( null == self::$_instance ) {
-            self::$_instance = new self;
-        }
-        return self::$_instance;
-    }
-    
-    /**
-     * Class Constructor
-     */
-    public function __construct() {
-        $this->define_constant();
-        $this->load_required_files();
-        $this->init_class();
-        $this->init();
-    }
-    
-    /**
-     * Triggers When INIT Action Called
-     */
-    public function init(){
-        add_action('plugins_loaded', array( $this, 'after_plugins_loaded' ));
-        add_filter('load_textdomain_mofile',  array( $this, 'load_plugin_mo_files' ), 10, 2);
-        add_action( 'widgets_init', array( $this, 'init_widgets' ) );
-    }
-    
-    /**
-     * Loads Required Plugins For Plugin
-     */
-    private function load_required_files(){ 
-		$this->load_files(PBF_WC_PATH.'includes/class-*.php');
-       if($this->is_request('admin')){
-           $this->load_files(PBF_WC_PATH.'admin/class-*.php');
-       } 
+require_once(PBF_WC_PATH.'vsp-framework/vsp-init.php');
+require_once(PBF_WC_INC.'functions.php');
 
-    }
-    
-    /**
-     * Inits loaded Class
-     */
-    private function init_class(){
-        new Product_Brands_For_WooCommerce_Activation('pbf-wc','pbf-wc-welcome','welcome-template.php','Welcome To Product Brands Fro WooCommerce',__FILE__);
-		self::$functions = new Product_Brands_For_WooCommerce_Function;
-        
-        if($this->is_request('admin')){
-            $this->admin = new Product_Brands_For_WooCommerce_Admin;
-        }
-		
-		if($this->is_request('frontend')){
-			new Product_Brands_For_WooCommerce_FrontEnd;
-		}
-    }
-    
-     
-
-    protected function load_files($path,$type = 'require'){
-        foreach( glob( $path ) as $files ){
-            if($type == 'require'){
-                require_once( $files );
-            } else if($type == 'include'){
-                include_once( $files );
-            }
-        } 
-    }
-    
-	/**
-	 * init_widgets function.
-	 *
-	 * @access public
-	 */
-	public function init_widgets() {
-        // Inc
-
-        $this->load_files(PBF_WC_PATH.'includes/widgets/class-wc-widget-brand-description.php');
-		
-        if ( version_compare( WC_VERSION, '2.6.0', '>=' ) ) {
-            $this->load_files(PBF_WC_PATH.'includes/widgets/class-wc-widget-brand-nav.php');
-		} else {
-            $this->load_files(PBF_WC_PATH.'includes/widgets/class-wc-widget-brand-nav-deprecated.php');
-		}
-        
-        $this->load_files(PBF_WC_PATH.'includes/widgets/class-wc-widget-brand-thumbnails.php');
-        
-
-		// Register
-		register_widget( 'WC_Widget_Brand_Description' );
-		register_widget( 'WC_Widget_Brand_Nav' );
-		register_widget( 'WC_Widget_Brand_Thumbnails' );
-         
-    }
-	    
-    /**
-     * Set Plugin Text Domain
-     */
-    public function after_plugins_loaded(){
-        load_plugin_textdomain(PBF_WC_TXT, false, PBF_WC_LANGUAGE_PATH );
-    }
-    
-    /**
-     * load translated mo file based on wp settings
-     */
-    public function load_plugin_mo_files($mofile, $domain) {
-        if (PBF_WC_TXT === $domain)
-            return PBF_WC_LANGUAGE_PATH.'/'.get_locale().'.mo';
-
-        return $mofile;
-    }
-    
-    /**
-     * Define Required Constant
-     */
-    private function define_constant(){
-        $this->define('PBF_WC_NAME',pbf_wc_name().' For WooCommerce'); # Plugin Name
-        $this->define('PBF_WC_SLUG','pb-wc'); # Plugin Slug
-		//$this->define('PBF_WC_DB','pbf_wc_'); # Plugin Slug
-        $this->define('PBF_WC_PATH',plugin_dir_path( __FILE__ ).'/'); # Plugin DIR
-        $this->define('PBF_WC_LANGUAGE_PATH',PBF_WC_PATH.'languages/');
-        $this->define('PBF_WC_TXT','product-brands-for-woocommerce'); #plugin lang Domain
-        $this->define('PBF_WC_URL',plugins_url('', __FILE__ ).'/'); 
-        $this->define('PBF_WC_FILE',plugin_basename( __FILE__ ));
-        $this->define('PBF_WC_V',$this->version);
-    }
-    
-    /**
-	 * Define constant if not already set
-	 * @param  string $name
-	 * @param  string|bool $value
-	 */
-    protected function define($key,$value){
-        if(!defined($key)){
-            define($key,$value);
-        }
-    }
-     
-	/**
-	 * What type of request is this?
-	 * string $type ajax, frontend or admin
-	 * @return bool
-	 */
-	private function is_request( $type ) {
-		switch ( $type ) {
-			case 'admin' :
-				return is_admin();
-			case 'ajax' :
-				return defined( 'DOING_AJAX' );
-			case 'cron' :
-				return defined( 'DOING_CRON' );
-			case 'frontend' :
-				return ( ! is_admin() || defined( 'DOING_AJAX' ) ) && ! defined( 'DOING_CRON' );
-		}
-	}
-    
-    
-    
+if(function_exists("vsp_mayby_framework_loader")){
+    vsp_mayby_framework_loader(PBF_WC_PATH);
 }
 
-define('PBF_WC_DB','pbf_wc_');
-    
-require_once(__DIR__."/includes/functions.php");
-if(!function_exists('PBF_WC')){
-    function PBF_WC(){
-        return Product_Brands_For_WooCommerce::get_instance();
+if(is_admin()){
+    register_activation_hook( __FILE__, 'pbf_wc_activate_plugin' );
+    register_deactivation_hook( __FILE__, 'pbf_wc_deactivate_plugin' );
+    register_deactivation_hook( PBF_WC_DEPEN, 'pbf_wc_dependency_deactivate' );
+   
+    if(!function_exists("pbf_wc_activate_plugin")){ 
+        function pbf_wc_activate_plugin(){
+            $is_old = get_option("_product_brands_wc",false);
+            if($is_old === false){
+                $new_options = array('singular_name' => '','plural_name' => '','url_slug' => '','brand_place' => '','brand_position' => '','brand_imagesize' => 'small','html_template' => '','custom_style' => '','small_imagesize' => '','medium_imagesize' => '','large_imagesize' => '','brand_pagelink' => true,'brand_showmeta' => true,'default_image' => '',);
+                $options = array('pbf_wc_custom_brands_name' => 'singular_name','pbf_wc_custom_brands_name_plural' => 'plural_name','pbf_wc_custom_url_slug' => 'url_slug','pbf_wc_whereto_show' => 'brand_place','pbf_wc_img_position' => 'brand_position','pbf_wc_img_size' => 'brand_imagesize','pbf_wc_html_template' => 'html_template','pbf_wc_custom_style' => 'custom_style','pbf_wc_imgsize_small' => 'small_imagesize','pbf_wc_imgsize_medium' => 'medium_imagesize','pbf_wc_imgsize_large' => 'large_imagesize',);
+
+                foreach($options as $option => $k){
+                    $new_val = get_option($option,false);
+                    if($new_val !== false){
+                        $new_options[$k] = $new_val;
+                    }
+                    
+                    if(!in_array($option,array('pbf_wc_html_template','pbf_wc_custom_style'))){
+                        delete_option($option);
+                    }
+                }
+                
+                add_option("_product_brands_wc",$new_options);
+            }
+            update_option('pbf_wc_flush_permalink','flush_now');            
+        }
     }
     
-    PBF_WC();
+    if(!function_exists("pbf_wc_deactivate_plugin")){ function pbf_wc_deactivate_plugin(){} }
+    
+    if(!function_exists("pbf_wc_dependency_deactivate")){ function pbf_wc_dependency_deactivate(){} }
+}
+
+add_action("vsp_framework_loaded",'pbf_wc_loader');
+
+function pbf_wc_loader(){
+    if(!vsp_wc_active()){
+        $msg = sprintf(__("%s Requires WooCommerce To Be Installed & Activated."),'<strong>'.PBF_WC_NAME.'</strong>');
+        vsp_notice_error($msg,'pbf_wc_active_issue',1,array(),array('on_ajax' => false));
+        return;
+    }
+    
+    require_once(PBF_WC_PATH.'bootstrap.php');
+    Product_Brands_For_WooCommerce::instance();
+}
+
+add_action('plugins_loaded', 'pbf_wc_txt_loader');
+
+if(!function_exists("pbf_wc_txt_loader")){
+    function pbf_wc_txt_loader(){
+        load_plugin_textdomain(PBF_WC_TXT, false, PBF_WC_LANGUAGE_PATH );
+    }
 }

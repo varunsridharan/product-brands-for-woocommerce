@@ -40,12 +40,12 @@ class WC_Widget_Brand_Thumbnails extends WP_Widget {
 		$exclude = array_map( 'intval', explode( ',', $instance['exclude'] ) );
 		$order = $instance['orderby'] == 'name' ? 'asc' : 'desc';
 
-		$brands = get_terms( 'product_brands', array( 'hide_empty' => $instance['hide_empty'], 'orderby' => $instance['orderby'], 'exclude' => $exclude, 'number' => $instance['number'], 'order' => $order ) );
+		$brands = get_terms( 'product_brands', array('hide_empty' => $instance['hide_empty'], 'orderby' => $instance['orderby'], 'exclude' => $exclude, 'number' => $instance['number'], 'order' => $order ));
 
 		if ( ! $brands ) {
 			return;
 		}
-
+        
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->woo_widget_idbase );
 
 		echo $args['before_widget'];

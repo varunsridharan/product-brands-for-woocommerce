@@ -7,7 +7,7 @@
 
 <?php if ( $thumbnail ) : ?>
 
-	<img src="<?php echo $thumbnail; ?>" alt="Thumbnail" class="wp-post-image aligncenter" />
+	<?php echo '<img src="'.$thumbnail.'" alt="'.$brand->name.'"/>'; ?>
 
 <?php endif; ?>
 

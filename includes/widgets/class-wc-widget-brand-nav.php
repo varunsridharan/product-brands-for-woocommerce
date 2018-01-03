@@ -270,7 +270,7 @@ class WC_Widget_Brand_Nav extends WC_Widget {
 		if ( $taxonomy !== $this->get_current_taxonomy() ) {
 			$term_counts        = $this->get_filtered_term_product_counts( wp_list_pluck( $terms, 'term_id' ), $taxonomy );
 			$_chosen_attributes = $this->get_chosen_attributes();
-
+            
 			echo '<select class="wc-brand-dropdown-layered-nav-' . esc_attr( $taxonomy ) . '">';
 			echo '<option value="">' . __( 'Any Brand', PBF_WC_TXT ) . '</option>';
 

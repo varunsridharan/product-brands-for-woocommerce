@@ -46,8 +46,8 @@ class WC_Widget_Brand_Description extends WP_Widget {
 		$thumbnail = '';
 		$term      = get_term_by( 'slug', get_query_var( 'term' ), 'product_brands' );
 
-		$thumbnail = pbf_wc_get_brand_thumbnail_url( $term->term_id, 'large' );
-        
+		$thumbnail = pbf_wc_get_brand_thumbnail_url( $term->term_id, 'pbf_wc_large' );
+
 		echo $before_widget . $before_title . $term->name . $after_title;
 
 		wc_get_template( 'widgets/brand-description.php', array(
